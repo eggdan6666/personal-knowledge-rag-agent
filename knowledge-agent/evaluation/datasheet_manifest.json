@@ -1,0 +1,107 @@
+[
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\ST\\stm32f103c8.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\ST\\stm32f103c8.pdf",
+    "source": "stm32f103c8.pdf",
+    "sha256": "1e54ce18e6c34c5b4a78986f26e245e143748c721009fc9af5953795c30686bc",
+    "pdf_pages": 114
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\Quectel\\EC600M-CN.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\Quectel\\EC600M-CN.pdf",
+    "source": "EC600M-CN.pdf",
+    "sha256": "1f76e134ae2cfb3f63a0ae0dcfe3adef43ab58026e72875423d44de1963d8bd0",
+    "pdf_pages": 86
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\TI\\TL431.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\TI\\TL431.pdf",
+    "source": "TL431.pdf",
+    "sha256": "ed2e90697de4e2c553195514adf1ee59cda42863716b6ef702b8304a5b921d22",
+    "pdf_pages": 85
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\TI\\LM2596.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\TI\\LM2596.pdf",
+    "source": "LM2596.pdf",
+    "sha256": "2eec90879908cf711b84d4f0c5d534c3cd12c576d25254b7019247435af4ab0f",
+    "pdf_pages": 47
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\MPS\\MP1584.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\MPS\\MP1584.pdf",
+    "source": "MP1584.pdf",
+    "sha256": "b5daa5997679ab59d45115dd44f70ac26d095e59867a560261482d42b350cda4",
+    "pdf_pages": 17
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\TI\\ADS1115.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\TI\\ADS1115.pdf",
+    "source": "ADS1115.pdf",
+    "sha256": "eefff4d412ce2dcd7e659f47238edc9b2fa02e5971f2625af730502033701834",
+    "pdf_pages": 57
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\TI\\INA219.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\TI\\INA219.pdf",
+    "source": "INA219.pdf",
+    "sha256": "58004eda854d07478e6fc6f4398c114f60a3bcf18d4877471c7c1a306d1fa1cb",
+    "pdf_pages": 38
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\Bosch\\BME280.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\Bosch\\BME280.pdf",
+    "source": "BME280.pdf",
+    "sha256": "a2ccdb449fec94380742fe8eec851a11d9bd4142252d332b34682b4deecd7d89",
+    "pdf_pages": 60
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\ST\\LIS3DH.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\ST\\LIS3DH.pdf",
+    "source": "LIS3DH.pdf",
+    "sha256": "852bfcf1a993f04cc147f26a26612a22fdc307c234f3e53d2c24c850ad421533",
+    "pdf_pages": 54
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\InvenSense\\MPU6050.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\InvenSense\\MPU6050.pdf",
+    "source": "MPU6050.pdf",
+    "sha256": "a4fdf69590b8cbab1cf0a5bcd359327b0ac022061fb233855aff2e191e7e3584",
+    "pdf_pages": 52
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\Winbond\\W25Q64.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\Winbond\\W25Q64.pdf",
+    "source": "W25Q64.pdf",
+    "sha256": "7ed37275d3af5c232456490334e2a52b245fe33315479eae40307f83709114f8",
+    "pdf_pages": 77
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\TI\\TMP102.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\TI\\TMP102.pdf",
+    "source": "TMP102.pdf",
+    "sha256": "c9da6620ef95f75ce94372f670a84d168e05922dd32cebfaa6517083f15ebfaf",
+    "pdf_pages": 33
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\TI\\INA226.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\TI\\INA226.pdf",
+    "source": "INA226.pdf",
+    "sha256": "c9b67f886d4a5241a5e070723f7b61867409eeb27eed768b9cdd9cb17e03ca2d",
+    "pdf_pages": 41
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\Microchip\\ATmega328P.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\Microchip\\ATmega328P.pdf",
+    "source": "ATmega328P.pdf",
+    "sha256": "fb84858d0b12c695a12b13f0c74b962d81210247d440c7a24c0ed23dfabfdfaf",
+    "pdf_pages": 294
+  },
+  {
+    "source_path": "E:\\HD-Agent·分层记忆RAG的电子Dstasheet智能问答\\corpus\\data\\raw_pdf\\TI\\NE555.pdf",
+    "copied_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处\\datasheets\\TI\\NE555.pdf",
+    "source": "NE555.pdf",
+    "sha256": "ce821b05832f5a98840da2055ddab4815fde9d8da5ee47057266eec7bbb84f28",
+    "pdf_pages": 39
+  }
+]

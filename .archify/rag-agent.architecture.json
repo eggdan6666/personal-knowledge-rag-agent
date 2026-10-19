@@ -1,0 +1,230 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "个人知识库 RAG Agent 系统架构全景图",
+    "subtitle": "基于 ChromaDB + 本地 bge-small 嵌入 + DeepSeek/豆包双引擎与严格防幻觉",
+    "output": "rag_agent_architecture.html",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    {
+      "id": "doc-sources",
+      "type": "external",
+      "label": "本地源文档",
+      "sublabel": "PDF / DOCX / TXT",
+      "pos": [40, 360],
+      "size": [130, 60]
+    },
+    {
+      "id": "ingest-engine",
+      "type": "backend",
+      "label": "文档解析引擎",
+      "sublabel": "ingest.py",
+      "tag": "PyMuPDF / docx",
+      "pos": [230, 360],
+      "size": [140, 60]
+    },
+    {
+      "id": "chunk-splitter",
+      "type": "backend",
+      "label": "动态切块器",
+      "sublabel": "Chunk:300 Overlap:30",
+      "tag": "MD5 内容去重",
+      "pos": [430, 360],
+      "size": [150, 60]
+    },
+    {
+      "id": "bge-embed",
+      "type": "backend",
+      "label": "本地向量模型",
+      "sublabel": "bge-small-zh-v1.5",
+      "tag": "100MB 离线计算",
+      "pos": [430, 190],
+      "size": [150, 60]
+    },
+    {
+      "id": "chroma-db",
+      "type": "database",
+      "label": "ChromaDB 向量库",
+      "sublabel": "knowledge_base",
+      "tag": "本地持久化",
+      "pos": [640, 360],
+      "size": [150, 60]
+    },
+    {
+      "id": "user-input",
+      "type": "external",
+      "label": "终端用户 / CLI",
+      "sublabel": "query.py 命令行交互",
+      "pos": [40, 190],
+      "size": [130, 60]
+    },
+    {
+      "id": "retriever",
+      "type": "backend",
+      "label": "RAG 检索召回器",
+      "sublabel": "Top-K 相似度召回",
+      "tag": "加权 Prefix 向量",
+      "pos": [640, 190],
+      "size": [150, 60]
+    },
+    {
+      "id": "prompt-guard",
+      "type": "security",
+      "label": "Prompt 与防幻觉拦截",
+      "sublabel": "溯源标签 [来源N]",
+      "tag": "未知即坦诚回答",
+      "pos": [850, 190],
+      "size": [160, 60]
+    },
+    {
+      "id": "llm-deepseek",
+      "type": "cloud",
+      "label": "DeepSeek API",
+      "sublabel": "deepseek-chat",
+      "tag": "主力推理",
+      "pos": [1080, 120],
+      "size": [140, 60]
+    },
+    {
+      "id": "llm-doubao",
+      "type": "cloud",
+      "label": "豆包 / 火山方舟",
+      "sublabel": "Ark Endpoint",
+      "tag": "敏捷办公 / 备用",
+      "pos": [1080, 260],
+      "size": [140, 60]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "本地离线运行时（Python 3.10+ / ChromaDB 向量数据库）",
+      "wraps": [
+        "ingest-engine",
+        "chunk-splitter",
+        "bge-embed",
+        "chroma-db",
+        "retriever",
+        "prompt-guard"
+      ]
+    },
+    {
+      "kind": "region",
+      "label": "云端多模型服务商（通过 .env 无缝热切换）",
+      "wraps": [
+        "llm-deepseek",
+        "llm-doubao"
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "doc-to-ingest",
+      "from": "doc-sources",
+      "to": "ingest-engine",
+      "label": "扫描 DATA_PATH"
+    },
+    {
+      "id": "ingest-to-chunk",
+      "from": "ingest-engine",
+      "to": "chunk-splitter",
+      "label": "清洗纯文本"
+    },
+    {
+      "id": "chunk-to-embed",
+      "from": "chunk-splitter",
+      "to": "bge-embed",
+      "label": "300字符块",
+      "fromSide": "top",
+      "toSide": "bottom"
+    },
+    {
+      "id": "embed-to-chroma",
+      "from": "bge-embed",
+      "to": "chroma-db",
+      "label": "稠密向量"
+    },
+    {
+      "id": "chunk-to-chroma",
+      "from": "chunk-splitter",
+      "to": "chroma-db",
+      "label": "文本+MD5哈希ID"
+    },
+    {
+      "id": "user-to-retriever",
+      "from": "user-input",
+      "to": "bge-embed",
+      "label": "提问输入"
+    },
+    {
+      "id": "embed-to-retriever",
+      "from": "bge-embed",
+      "to": "retriever",
+      "label": "检索前缀+向量化"
+    },
+    {
+      "id": "retriever-to-chroma",
+      "from": "retriever",
+      "to": "chroma-db",
+      "label": "Top-5 相似度查询",
+      "fromSide": "bottom",
+      "toSide": "top"
+    },
+    {
+      "id": "retriever-to-guard",
+      "from": "retriever",
+      "to": "prompt-guard",
+      "label": "命中切块+来源标注"
+    },
+    {
+      "id": "guard-to-deepseek",
+      "from": "prompt-guard",
+      "to": "llm-deepseek",
+      "label": "OpenAI 兼容协议",
+      "fromSide": "right",
+      "toSide": "left"
+    },
+    {
+      "id": "guard-to-doubao",
+      "from": "prompt-guard",
+      "to": "llm-doubao",
+      "label": "Volcengine Ark 协议",
+      "fromSide": "right",
+      "toSide": "left"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "数据接入与切块",
+      "items": [
+        "PyMuPDF + python-docx 提取纯文本",
+        "段落空行动态累积至 300 字符切块",
+        "超长段落 30 字符重叠滑动窗口",
+        "MD5 哈希唯一 ID 避免重复入库"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "离线向量检索",
+      "items": [
+        "BAAI/bge-small-zh-v1.5 本地嵌入模型",
+        "ChromaDB PersistentClient 本地持久化",
+        "BGE 专属检索前缀特征增强",
+        "Top-5 相似度打分与溯源过滤"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "防幻觉与多模型调度",
+      "items": [
+        "System Prompt 强约束未知信息明确回答不知道",
+        "回答句末自动输出 [来源N] 溯源引用",
+        "OpenAI 标准接口兼容封装",
+        ".env 无缝热切换 DeepSeek 与豆包火山方舟"
+      ]
+    }
+  ]
+}

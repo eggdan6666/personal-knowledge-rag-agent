@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-10-16T04:32:33.100013+08:00",
+  "selected_pdf_count": 15,
+  "selected_pdf_pages": 1094,
+  "all_document_count": 18,
+  "before_chunks": 14,
+  "added_chunks": 8128,
+  "total_chunks": 8142,
+  "data_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处",
+  "db_path": "E:\\项目集合\\个人知识库 RAG Agent\\knowledge-agent\\db",
+  "backup_path": "E:\\项目集合\\个人知识库 RAG Agent\\knowledge-agent\\backups\\db_backup_20261016_042643",
+  "model": "BAAI/bge-small-zh-v1.5",
+  "chunk_characters": 300,
+  "long_paragraph_overlap": 30
+}

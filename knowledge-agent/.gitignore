@@ -1,0 +1,16 @@
+# 敏感配置文件
+.env
+*.env
+!.env.example
+
+# 运行时缓存与产物
+__pycache__/
+*.pyc
+
+# 本地 Chroma 向量库与备份
+db/
+db_test/
+backups/
+*.sqlite3
+*.sqlite3-journal
+*.bin

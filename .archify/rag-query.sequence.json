@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "个人知识库 RAG Agent 问答检索时序调用链",
+    "subtitle": "query.py: 提问输入 → 本地向量化 → ChromaDB Top-K 召回 → 上下文拼接 → LLM 回答",
+    "output": "rag_query_sequence.html",
+    "viewBox": [1080, 640],
+    "column_fit": "spread",
+    "quality_profile": "showcase"
+  },
+  "participants": [
+    { "id": "user", "type": "external", "label": "用户终端", "sublabel": "CLI 命令行" },
+    { "id": "query_app", "type": "backend", "label": "问答主程序", "sublabel": "query.py" },
+    { "id": "bge_model", "type": "backend", "label": "本地向量模型", "sublabel": "bge-small-zh" },
+    { "id": "chroma", "type": "database", "label": "ChromaDB", "sublabel": "向量数据库" },
+    { "id": "guard", "type": "security", "label": "防幻觉校验", "sublabel": "System Prompt" },
+    { "id": "llm", "type": "cloud", "label": "大模型 API", "sublabel": "DeepSeek / 豆包" }
+  ],
+  "segments": [
+    { "from": 150, "to": 260, "label": "1. 向量化与检索阶段" },
+    { "from": 270, "to": 370, "label": "2. 上下文与防幻觉阶段" },
+    { "from": 380, "to": 490, "label": "3. 推理与溯源呈现阶段" }
+  ],
+  "messages": [
+    { "id": "m1", "from": "user", "to": "query_app", "y": 165, "label": "输入自然语言问题", "variant": "default" },
+    { "id": "m2", "from": "query_app", "to": "bge_model", "y": 195, "label": "为句子加前缀并提取特征", "variant": "emphasis" },
+    { "id": "m3", "from": "bge_model", "to": "query_app", "y": 225, "label": "返回 512 维稠密向量", "variant": "return" },
+    { "id": "m4", "from": "query_app", "to": "chroma", "y": 255, "label": "query(top_k=5, 距离计算)", "variant": "emphasis" },
+    { "id": "m5", "from": "chroma", "to": "query_app", "y": 285, "label": "返回命中文本块及元数据", "variant": "return" },
+    { "id": "m6", "from": "query_app", "to": "guard", "y": 315, "label": "拼接上下文与 [来源N] 编号", "variant": "default" },
+    { "id": "m7", "from": "guard", "to": "query_app", "y": 345, "label": "注入防幻觉约束与兜底规范", "variant": "security" },
+    { "id": "m8", "from": "query_app", "to": "llm", "y": 395, "label": "POST /chat/completions (temp=0.3)", "variant": "emphasis" },
+    { "id": "m9", "from": "llm", "to": "query_app", "y": 435, "label": "流式返回答案 (含 [来源N] 引用)", "variant": "return" },
+    { "id": "m10", "from": "query_app", "to": "user", "y": 470, "label": "呈现最终答案与相似度溯源表", "variant": "return" }
+  ],
+  "activations": [
+    { "participant": "query_app", "from": 165, "to": 475, "type": "backend" },
+    { "participant": "bge_model", "from": 195, "to": 230, "type": "backend" },
+    { "participant": "chroma", "from": 255, "to": 290, "type": "database" },
+    { "participant": "guard", "from": 315, "to": 350, "type": "security" },
+    { "participant": "llm", "from": 395, "to": 440, "type": "cloud" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "闭环检索链",
+      "items": [
+        "bge 专属前缀增强语义相似度权重",
+        "ChromaDB 内存/本地持久化毫秒级返回 Top-5",
+        "相似度计算公式: 1.0 - cosine_distance"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "防幻觉拦截",
+      "items": [
+        "System Prompt 强约束：资料没有的绝不臆测",
+        "回答句末强制附加 [来源N] 溯源标签",
+        "终端同步打印文件来源与匹配打分"
+      ]
+    }
+  ]
+}

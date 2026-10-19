@@ -1,0 +1,2272 @@
+{
+  "created_at": "2026-10-16T04:32:36.839276+08:00",
+  "test_cases_sha256": "9d54b68bbec81ee2223699c5a0ae42dbec859d44c2df86483f86fd7bcdc89d34",
+  "scope": "固定45道单文档参数/用法检索题与4道库外题；Top-K=5；未调用LLM。",
+  "metric_definitions": {
+    "source_hit_at_1": "首条召回的来源文件是否为参考文件；不代表答案或证据正确。",
+    "source_hit_at_5": "前5条召回是否包含参考文件；不代表答案或证据正确。",
+    "anchor_coverage_at_5": "正确来源的Top-5文本合并后，是否匹配预先定义的一组关键词；仅为字符串规则诊断，不是语义正确率。"
+  },
+  "summary": {
+    "positive_cases": 45,
+    "out_of_corpus_cases": 4,
+    "source_hit_at_1": 23,
+    "source_hit_at_5": 27,
+    "anchor_coverage_at_5": 12,
+    "retrieval_median_ms": 35.2,
+    "retrieval_p95_ms": 75.93,
+    "llm_answer_evaluated": false,
+    "refusal_evaluated": false,
+    "collection_count": 8142
+  },
+  "extension": {
+    "created_at": "2026-10-16T04:32:33.100013+08:00",
+    "selected_pdf_count": 15,
+    "selected_pdf_pages": 1094,
+    "all_document_count": 18,
+    "before_chunks": 14,
+    "added_chunks": 8128,
+    "total_chunks": 8142,
+    "data_path": "E:\\项目集合\\个人知识库 RAG Agent\\输出资料存放处",
+    "db_path": "E:\\项目集合\\个人知识库 RAG Agent\\knowledge-agent\\db",
+    "backup_path": "E:\\项目集合\\个人知识库 RAG Agent\\knowledge-agent\\backups\\db_backup_20261016_042643",
+    "model": "BAAI/bge-small-zh-v1.5",
+    "chunk_characters": 300,
+    "long_paragraph_overlap": 30
+  },
+  "cases": [
+    {
+      "id": "STM-01",
+      "kind": "answerable",
+      "question": "STM32F103C8的Cortex-M3内核最高主频是多少MHz？",
+      "source": "stm32f103c8.pdf",
+      "reference_page": 1,
+      "reference_answer": "最高72 MHz。",
+      "anchors": [
+        [
+          "72",
+          "MHz"
+        ]
+      ],
+      "retrieval_ms": 30.07,
+      "hits": [
+        {
+          "text": "Features\nIncludes ST state-of-the-art patented \ntechnology\n•\nArm® 32-bit Cortex®-M3 CPU core \n–\n72 MHz maximum frequency, 1.25 \nDMIPS/MHz (Dhrystone 2.1) performance \nat 0 wait state memory access\n–\nSingle-cycle multiplication and hardware \ndivision\n•\nMemories\n–\n64 or 128 Kbytes of Flash memory\n–\n20",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.6124976873397827
+        },
+        {
+          "text": "[第14页]\nDescription\nSTM32F103x8, STM32F103xB\n14/115\nDS5319 Rev 20\n2.3 \nOverview\n2.3.1 \nArm® Cortex®-M3 core with embedded flash and SRAM\nThe Arm® Cortex®-M3 processor is the latest generation of Arm® processors for embedded \nsystems. It has been developed to provide a low-cost platform that meets the",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.6079881191253662
+        },
+        {
+          "text": "B5 \n824~849 \n869~894 \nMHz \nLTE-FDD B7 \n2500~2570 \n2620~2670 \nMHz \nLTE-FDD B8 \n880~915 \n925~960 \nMHz",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6033868789672852
+        },
+        {
+          "text": "C)\nConsumption (mA)\n72 MHz\n36 MHz\n16 MHz\n8 MHz",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.6033514738082886
+        },
+        {
+          "text": "-39 dBm \n频段 \n接收灵敏度（典型值） \n主集 \n3GPP 要求 \nLTE-FDD B1 (10 MHz) \n-99 \n-96.3 \nLTE-FDD B3 (10 MHz) \n-99.5 \n-93.3 \nLTE-FDD B5 (10 MHz) \n-99 \n-94.3 \nLTE-FDD B8 (10 MHz) \n-99 \n-93.3 \nLTE-TDD B34 (10 MHz) \n-100 \n-96.3 \nLTE-TDD B38 (10 MHz) \n-100 \n-96.3",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.601900577545166
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "STM-02",
+      "kind": "answerable",
+      "question": "STM32F103C8有多少Kbytes的SRAM？",
+      "source": "stm32f103c8.pdf",
+      "reference_page": 1,
+      "reference_answer": "20 Kbytes SRAM。",
+      "anchors": [
+        [
+          "20",
+          "Kbytes",
+          "SRAM"
+        ]
+      ],
+      "retrieval_ms": 28.82,
+      "hits": [
+        {
+          "text": "M32F103CB, STM32F103TB\nBGA100 10 × 10 mm\nUFBGA100 7 × 7 mm\nBGA64 5 × 5 mm\nVFQFPN36 6 × 6 mm\nLQFP100 14 × 14 mm\nLQFP64 10 × 10 mm\nLQFP48 7 × 7 mm\nUFQFPN48 7 × 7 mm\nwww.st.com",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5854489803314209
+        },
+        {
+          "text": "[第10页]\nDescription\nSTM32F103x8, STM32F103xB\n10/115\nDS5319 Rev 20\n2.1 \nDevice overview\n            \n \nTable 2. STM32F103xx medium-density device features and peripheral counts\nPeripheral\nSTM32F103Tx\nSTM32F103Cx\nSTM32F103Rx\nSTM32F103Vx\nFlash - Kbytes\n64\n128\n64\n128\n64\n128\n64\n128\nSRAM - Kbytes\n20\n20\n20",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5746105909347534
+        },
+        {
+          "text": "4 \n0 \n1 \n1 \n1 \n0 \n0 thru 63 \n000000h – 3FFFFFh \n4MB \nLower 1/2 \nX \nX \n1 \n1 \n1 \n0 thru 127 \n000000h – 7FFFFFh \n8MB \nALL \n1 \n0 \n0 \n0 \n1 \n127 \n7FF000h – 7FFFFFh \n4KB \nU – 1/2048 \n1 \n0 \n0 \n1 \n0 \n127 \n7FE000h – 7FFFFFh \n8KB \nU – 1/1024 \n1 \n0 \n0 \n1 \n1 \n127 \n7FC000h – 7FFFFFh  \n16KB \nU – 1/512 \n1 \n0 \n1 \n0",
+          "source": "W25Q64.pdf",
+          "similarity": 0.5728580951690674
+        },
+        {
+          "text": "7 \n200000h – 7FFFFFh \n5MB \nUpper 3/4 \n0 \n1 \n1 \n1 \n0 \n64 thru 127 \n400000h – 7FFFFFh \n4MB \nUpper 1/2 \nX \nX \n1 \n1 \n1 \nNONE \nNONE \nNONE \nNONE \n1 \n0 \n0 \n0 \n1 \n0 thru 127 \n000000h – 7FEFFFh \n8,188KB \nL – 2047/2048 \n1 \n0 \n0 \n1 \n0 \n0 thru 127 \n000000h – 7FDFFFh \n8,184KB \nL – 1023/1024 \n1 \n0 \n0 \n1 \n1 \n0 thr",
+          "source": "W25Q64.pdf",
+          "similarity": 0.5728155970573425
+        },
+        {
+          "text": "023/1024 \n1 \n0 \n0 \n1 \n1 \n0 thru 127 \n000000h – 7FBFFFh  \n8,176KB \nL – 511/512 \n1 \n0 \n1 \n0 \nX \n0 thru 127 \n000000h – 7F7FFFh \n8,160KB \nL – 255/256 \n1 \n1 \n0 \n0 \n1 \n0 thru 127 \n001000h – 7FFFFFh \n8,188KB \nL – 2047/2048 \n1 \n1 \n0 \n1 \n0 \n0 thru 127 \n002000h – 7FFFFFh \n8,184KB \nL – 1023/1024 \n1 \n1 \n0 \n1 \n1",
+          "source": "W25Q64.pdf",
+          "similarity": 0.5713537335395813
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "STM-03",
+      "kind": "answerable",
+      "question": "STM32F103C8的应用供电和I/O电压范围是多少？",
+      "source": "stm32f103c8.pdf",
+      "reference_page": 1,
+      "reference_answer": "2.0至3.6 V。",
+      "anchors": [
+        [
+          "2.0",
+          "3.6",
+          "supply"
+        ]
+      ],
+      "retrieval_ms": 32.14,
+      "hits": [
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.609053909778595
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5997874140739441
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.588655948638916
+        },
+        {
+          "text": "为1 %电阻，如果对ADC 精度要求更高，则\n建议使用精度为0.5 %电阻。 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nNET_MODE \n52 \nDO \n网络注册状态指示 \n1.8 V 电压域。不用则悬空。 \nNET_STATUS/ \nUSB_BOOT \n55 \nDO \n网络状态指示 \n1.8 V 电压域。 \n模块正常开机后，该引脚用作网",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5797089338302612
+        },
+        {
+          "text": "-94.8 \nLTE-FDD B66 (10 MHz) \n-99.0 \n-96.5 \n若天线端口外围设计存在直流电，则必须在C3 位置贴隔直电容，防止发生对地短路，电容值建议为  \n100 pF，可根据实际要求调整。若外围设计中无直流电，则无需预留C3 位置。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5754134654998779
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "ECM-01",
+      "kind": "answerable",
+      "question": "EC600M模块供电范围是多少，VBAT最低不能低于多少伏？",
+      "source": "EC600M-CN.pdf",
+      "reference_page": 30,
+      "reference_answer": "本手册要求3.4至4.3 V，输入电压不低于3.4 V。",
+      "anchors": [
+        [
+          "3.4",
+          "4.3",
+          "供电范围"
+        ]
+      ],
+      "retrieval_ms": 56.75,
+      "hits": [
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.7218182682991028
+        },
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6941040754318237
+        },
+        {
+          "text": "B\n和VBAT_RF 预留3 个（100 nF、10 pF 和33 pF）具有良好ESR 性能的片式多层陶瓷电容（MLCC），且\n电容应靠近VBAT 引脚放置。外部供电电源连接模块时，VBAT_BB 和VBAT_RF 需要采用星型拓扑方式。\nVBAT_BB 走线宽度应不小于1 mm，VBAT_RF 走线宽度应不小于2 mm。原则上，VBAT 走线越长，线宽\n越宽。 \n \n另外，为了保证电源稳定，建议在电源前端加VRWM = 4.7 V、低钳位电压和高峰值脉冲电流Ipp 的TVS\nVBAT_RF \n36、37 \nPI \n模块射频电源 \n载流能力。 \n建议外部增加TVS 管。 \n建议预留测试点。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6809688210487366
+        },
+        {
+          "text": "[第62页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          61 / 85 \n6 电气性能和可靠性 \n \n6.1. 绝对最大额定值 \n \n表38：绝对最大额定值 \n \n6.2. 电源额定值 \n \n表39：模块电源额定值 \n \n参数 \n最小值 \n最大值 \n单位 \nVBAT_BB/VBAT_RF 电压 \n-0.3 \n6 \nV \nUSB_VBUS 电压 \n-0.3 \n5.5 \nV \n数字接口电压 \n-0.3 \n2.2 \nV \nVBAT_BB 电流 \n- \n0.5",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6589088439941406
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6579319834709167
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "ECM-02",
+      "kind": "answerable",
+      "question": "EC600M供电参考设计要求电源至少提供多少A电流？",
+      "source": "EC600M-CN.pdf",
+      "reference_page": 30,
+      "reference_answer": "供电给模块的电流至少需要1.5 A。",
+      "anchors": [
+        [
+          "至少",
+          "1.5",
+          "电流"
+        ]
+      ],
+      "retrieval_ms": 52.74,
+      "hits": [
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.7593050599098206
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6787323951721191
+        },
+        {
+          "text": "[第62页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          61 / 85 \n6 电气性能和可靠性 \n \n6.1. 绝对最大额定值 \n \n表38：绝对最大额定值 \n \n6.2. 电源额定值 \n \n表39：模块电源额定值 \n \n参数 \n最小值 \n最大值 \n单位 \nVBAT_BB/VBAT_RF 电压 \n-0.3 \n6 \nV \nUSB_VBUS 电压 \n-0.3 \n5.5 \nV \n数字接口电压 \n-0.3 \n2.2 \nV \nVBAT_BB 电流 \n- \n0.5",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6709088087081909
+        },
+        {
+          "text": "[第37页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          36 / 85 \n建议在MCU 与模块间串联一个共模电感L1 来抑制EMI。同时，建议在模块与测试点之间串联R1 和\nR2 电阻以便于调试，且电阻默认不贴。为了满足USB 数据线信号完整性的要求，L1、R1、R2 应靠近模\n块放置，且电阻之间需要靠近放置，连接测试点的桩线应保持尽量短。 \n \n为确保性能，USB 接口的电路设计应遵循以下原则： \n \n⚫ \nUSB 要求按照90 Ω 阻抗差分线设计，建议",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6432387828826904
+        },
+        {
+          "text": "电源额定值 .............................................................................................................................. 61 \n表40：EC600M-CN 功耗 ........................................................................................................................... 62 \n表41：EC600M-EU 功耗 .",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.631615400314331
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "ECM-03",
+      "kind": "answerable",
+      "question": "EC600M的ADC输入范围和分辨率分别是多少？",
+      "source": "EC600M-CN.pdf",
+      "reference_page": 48,
+      "reference_answer": "ADC0/ADC1输入电压0至1.2 V，分辨率12位。",
+      "anchors": [
+        [
+          "1.2",
+          "12",
+          "分辨率"
+        ]
+      ],
+      "retrieval_ms": 30.91,
+      "hits": [
+        {
+          "text": "4.9. 指示信号 \n \n表22：指示接口引脚描述 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nADC0 \n19 \nAI \n通用ADC 接口 \n不用则悬空。 \nADC1 \n20 \nAI \n参数 \n最小值 \n典型值 \n最大值 \n单位 \nADC0 输入电压范围 \n0 \n- \n1.2 \nV \nADC1 输入电压范围 \n0 \n- \n1.2 \nV \nADC 分辨率 \n- \n12 \n- \n位 \n1. ADC 接口设计时需预留分压电路，分压电路的两个电阻阻值要求大于100 kΩ。 \n2. 分压电阻精度对ADC 采样误差会有影响，推荐使用精度为1 %电阻，如果对ADC 精度要求更高，则\n建议使用精度为",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6482622623443604
+        },
+        {
+          "text": "[第48页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          47 / 85 \n表20：ADC 接口引脚描述 \n \n通过AT+QADC=<port>可以读取ADC 接口各引脚的电压值： \n \n⚫ \nAT+QADC=0：可用于读取ADC0 的电压值 \n⚫ \nAT+QADC=1：可用于读取ADC1 的电压值 \n \n如需了解更多相关AT 命令的信息，请参考文档 [2]。 \n \n表21：ADC 特性 \n备注 \n \n4.9. 指示信号 \n \n表22：指示接口引脚描述 \n引",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6399785876274109
+        },
+        {
+          "text": "[第47页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          46 / 85 \n4.7. 摄像头接口（可选） \n \n模块的摄像头接口最高支持30 万像素传感器，支持SPI 单数据线或双数据线传输。 \n \n表19：摄像头接口引脚描述 \n备注 \n \n4.8. ADC 接口 \n \n模块提供了2 路通用模数转换接口（ADC 接口）。ADC 接口在布线时，为了提高接口的电压测量准确\n度，建议进行包地处理。 \n \n \n \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nCAM",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6350939273834229
+        },
+        {
+          "text": "ADC\n±0.256V\nOutput data rate\n250SPS\nR1, R3\n1kΩ(1)\nR2, R4\n5kΩ(1)\nR5, R6\n100Ω(1)\nCDIFF\n0.22µF\nCCM1, CCM2\n0.022µF\n(1)\n1% precision resistors used.\nUsing Equation 7, if VSHUNT ranges from –50mV to +50mV, the application circuit produces a differential voltage \nranging from –0.250V to +0.250V across the",
+          "source": "ADS1115.pdf",
+          "similarity": 0.6218331456184387
+        },
+        {
+          "text": "500, ±1000, or ±2000 degrees per second (dps).  The ADC sample \nrate is programmable from 8,000 samples per second, down to 3.9 samples per second, and user-selectable \nlow-pass filters enable a wide range of cut-off frequencies. \n \n7.8 \nThree-Axis MEMS Accelerometer with 16-bit ADCs and Signal Cond",
+          "source": "MPU6050.pdf",
+          "similarity": 0.6179659366607666
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "TL4-01",
+      "kind": "answerable",
+      "question": "TL431的参考电压Vref大约是多少伏？",
+      "source": "TL431.pdf",
+      "reference_page": 1,
+      "reference_answer": "约2.5 V。",
+      "anchors": [
+        [
+          "Vref",
+          "approximately",
+          "2.5"
+        ]
+      ],
+      "retrieval_ms": 34.13,
+      "hits": [
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5922484993934631
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5823663473129272
+        },
+        {
+          "text": "440 \nmA \n参数 \n描述 \n最小值 \n最大值 \n单位 \nVIH \n输入高电平 \n0.7 × VDDIO \nVDDIO + 0.2 \nV \nVIL \n输入低电平 \n-0.3 \n0.3 × VDDIO \nV \nVOH \n输出高电平 \nVDDIO - 0.2 \n- \nV \nVOL \n输出低电平 \n- \n0.2 \nV \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n1.62 \n1.98 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.2 × USIM_VDD \nV \nVOH \n输出高电平",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.562247633934021
+        },
+        {
+          "text": "V \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT 和GND \n±5 \n±10 \nkV \n天线接口 \n±4 \n±8 \nkV \n其他接口 \n±0.5 \n±1 \nkV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5621887445449829
+        },
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5582064390182495
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "TL4-02",
+      "kind": "answerable",
+      "question": "TL431可调输出电压的上限是多少伏？",
+      "source": "TL431.pdf",
+      "reference_page": 1,
+      "reference_answer": "上限36 V，范围从Vref到36 V。",
+      "anchors": [
+        [
+          "Adjustable",
+          "output",
+          "36"
+        ]
+      ],
+      "retrieval_ms": 32.9,
+      "hits": [
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6243394017219543
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6117736101150513
+        },
+        {
+          "text": "为1 %电阻，如果对ADC 精度要求更高，则\n建议使用精度为0.5 %电阻。 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nNET_MODE \n52 \nDO \n网络注册状态指示 \n1.8 V 电压域。不用则悬空。 \nNET_STATUS/ \nUSB_BOOT \n55 \nDO \n网络状态指示 \n1.8 V 电压域。 \n模块正常开机后，该引脚用作网",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6036759614944458
+        },
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6023066639900208
+        },
+        {
+          "text": "[第37页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          36 / 85 \n建议在MCU 与模块间串联一个共模电感L1 来抑制EMI。同时，建议在模块与测试点之间串联R1 和\nR2 电阻以便于调试，且电阻默认不贴。为了满足USB 数据线信号完整性的要求，L1、R1、R2 应靠近模\n块放置，且电阻之间需要靠近放置，连接测试点的桩线应保持尽量短。 \n \n为确保性能，USB 接口的电路设计应遵循以下原则： \n \n⚫ \nUSB 要求按照90 Ω 阻抗差分线设计，建议",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6000123620033264
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "TL4-03",
+      "kind": "answerable",
+      "question": "TL431的B级、A级和标准级在25°C时初始参考电压容差各是多少？",
+      "source": "TL431.pdf",
+      "reference_page": 1,
+      "reference_answer": "B级0.5%，A级1%，标准级2%。",
+      "anchors": [
+        [
+          "0.5%",
+          "1%",
+          "2%"
+        ]
+      ],
+      "retrieval_ms": 37.38,
+      "hits": [
+        {
+          "text": "[第1页]\nTL431, TL432 Precision Programmable Reference\n1 Features\n•\nReference voltage tolerance at 25°C\n–\n0.5% (B grade)\n–\n1% (A grade)\n–\n2% (Standard grade)\n•\nAdjustable output voltage: Vref to 36V\n•\nOperation from −40°C to 125°C\n•\nTypical temperature drift (TL43xB)\n–\n6mV (C temp)\n–\n14mV (I temp, Q te",
+          "source": "TL431.pdf",
+          "similarity": 0.5922641158103943
+        },
+        {
+          "text": "Y 和RESET_N 引脚没有大负载电容（负载电容最大值不超过10 nF）。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5860493779182434
+        },
+        {
+          "text": "at 2.7 to 5.5V (automotive temperature range: –40°C to +125°C) \n●0 to 16MHz at 4.5 to 5.5V (automotive temperature range: –40°C to +125°C) \n●\nLow power consumption \n●Active mode: 1.5mA at 3V - 4MHz\n●Power-down mode: 1µA at 3V",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5830749273300171
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5805341005325317
+        },
+        {
+          "text": "标准所指定的公差。当温度返回至正常\n工作温度范围时，模块的各项指标仍符合3GPP 标准的要求。 \n参数 \n最小值 \n典型值 \n最大值 \n单位 \n正常工作温度范围 4 \n-35 \n+25 \n+75 \n°C \n扩展工作温度范围 5 \n-40 \n- \n+85 \n°C \n存储温度范围 \n-40 \n- \n+90 \n°C",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5752206444740295
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "LM2-01",
+      "kind": "answerable",
+      "question": "LM2596的固定内部开关频率是多少kHz？",
+      "source": "LM2596.pdf",
+      "reference_page": 1,
+      "reference_answer": "150 kHz。",
+      "anchors": [
+        [
+          "150",
+          "kHz",
+          "frequency"
+        ]
+      ],
+      "retrieval_ms": 34.72,
+      "hits": [
+        {
+          "text": "kHz\n0.6\n–\nµs\nBus free time between a STOP and \nSTART condition\nfSCL ≤ 100kHz\ntBUF\n4.7\n–\nµs\nfSCL > 100kHz\n1.3\n–\nµs\nNotes:\n1.\nIn Atmel ATmega328P, this parameter is characterized and not 100% tested.\n2.\nRequired only for fSCL > 100kHz.\n3.\nCb = capacitance of one bus line in pF.\n4.\nfCK = CPU clock freq",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5895194411277771
+        },
+        {
+          "text": "ow-power mode (5.376 kHz)",
+          "source": "LIS3DH.pdf",
+          "similarity": 0.5864615440368652
+        },
+        {
+          "text": "-39 dBm \n频段 \n接收灵敏度（典型值） \n主集 \n3GPP 要求 \nLTE-FDD B1 (10 MHz) \n-99 \n-96.3 \nLTE-FDD B3 (10 MHz) \n-99.5 \n-93.3 \nLTE-FDD B5 (10 MHz) \n-99 \n-94.3 \nLTE-FDD B8 (10 MHz) \n-99 \n-93.3 \nLTE-TDD B34 (10 MHz) \n-100 \n-96.3 \nLTE-TDD B38 (10 MHz) \n-100 \n-96.3",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5862223505973816
+        },
+        {
+          "text": "[第56页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          55 / 85 \n \n表35：EC600M-EU 射频接收灵敏度（单位：dBm） \n \n表36：EC600M-LA 射频接收灵敏度（单位：dBm） \nLTE-TDD B39 (10 MHz) \n-100 \n-96.3 \nLTE-TDD B40 (10 MHz) \n-100 \n-96.3 \nLTE-TDD B41 (10 MHz) \n-99.5 \n-94.3 \n频段 \n接收灵敏度（典型值） \n主集 \n3",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5635313391685486
+        },
+        {
+          "text": "B 断开） \n17.92 \nmA \nLTE-TDD @ PF = 64（USB 连接） \n29.72 \nmA",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5630119442939758
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "LM2-02",
+      "kind": "answerable",
+      "question": "LM2596标称能够驱动多大的输出负载电流？",
+      "source": "LM2596.pdf",
+      "reference_page": 1,
+      "reference_answer": "3 A。",
+      "anchors": [
+        [
+          "3-A",
+          "load"
+        ]
+      ],
+      "retrieval_ms": 34.65,
+      "hits": [
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6007564663887024
+        },
+        {
+          "text": "ximum Output Load Current \n最大输出负载电流 \nIMS \nIP Multimedia Subsystem \n子系统 \nIpp \nPeak Pulse Current \n峰值脉冲电流 \nLB \nLow Band \n低频段 \nLCC \nLeadless Chip Carrier (package) \n无引脚芯片载体（封装） \nLDO \nLow-dropout Regulator \n低压差线性稳压器 \nLED \nLight Emitting Diode \n发光二极管 \nLGA \nLand Grid Array \n栅格阵列封装",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5998073816299438
+        },
+        {
+          "text": "最大输出功率37 mW @ THD = \n1 %，R = 32 Ω。 \n若输出功率无法满足需求，可用此接\n口驱动外部功放器件。 \n不用则悬空。 \nSPK_P \n22 \nAO \n模拟音频差分输出通道（+） \nMIC_N \n23 \nAI \n麦克风输入通道（-） \n不用则悬空。 \nMIC_P \n24 \nAI \n麦克风输入通道（+）",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5957059860229492
+        },
+        {
+          "text": "二、匝数计算\n以 220V 整流后约 310V 直流母线、输出 12V/5A、工作频率 65kHz、最大占空比 Dmax 取 0.45 为例。磁通密度摆幅 B 取 0.18T 留裕量，由公式 Np = Vdc × Dmax / (ΔB × f × Ae) 估算，初级匝数约 66 匝。次级按匝比折算，12V 输出考虑整流管压降 0.7V，取 3 匝。辅助绕组给 VCC 供电，取 9 匝。计算结果必须回到实际磁芯 AL 值复核电感量，不能只信公式。",
+          "source": "EE28变压器绕制笔记.txt",
+          "similarity": 0.589171826839447
+        },
+        {
+          "text": "Y 和RESET_N 引脚没有大负载电容（负载电容最大值不超过10 nF）。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5860908031463623
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "LM2-03",
+      "kind": "answerable",
+      "question": "LM2596有哪些固定输出电压版本，是否还有可调版本？",
+      "source": "LM2596.pdf",
+      "reference_page": 1,
+      "reference_answer": "固定3.3 V、5 V、12 V，以及可调版本。",
+      "anchors": [
+        [
+          "3.3",
+          "5",
+          "12",
+          "adjustable"
+        ]
+      ],
+      "retrieval_ms": 28.21,
+      "hits": [
+        {
+          "text": "式 \n1.8 V 电压域。 \n模块开机前将此引脚下拉至地，在开机时\n模块将进入强制下载模式。低电平有效。\n建议预留测试点。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5803916454315186
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5662224888801575
+        },
+        {
+          "text": "最大输出功率37 mW @ THD = \n1 %，R = 32 Ω。 \n若输出功率无法满足需求，可用此接\n口驱动外部功放器件。 \n不用则悬空。 \nSPK_P \n22 \nAO \n模拟音频差分输出通道（+） \nMIC_N \n23 \nAI \n麦克风输入通道（-） \n不用则悬空。 \nMIC_P \n24 \nAI \n麦克风输入通道（+）",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5495843887329102
+        },
+        {
+          "text": "[第48页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          47 / 85 \n表20：ADC 接口引脚描述 \n \n通过AT+QADC=<port>可以读取ADC 接口各引脚的电压值： \n \n⚫ \nAT+QADC=0：可用于读取ADC0 的电压值 \n⚫ \nAT+QADC=1：可用于读取ADC1 的电压值 \n \n如需了解更多相关AT 命令的信息，请参考文档 [2]。 \n \n表21：ADC 特性 \n备注 \n \n4.9. 指示信号 \n \n表22：指示接口引脚描述 \n引",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5477592349052429
+        },
+        {
+          "text": "帧同步 \n1.8 V 电压域。 \n不用则悬空。 \nPCM_DIN \n59 \nDI \nPCM 数据输入 \nPCM_DOUT \n60 \nDO \nPCM 数据输出 \nPCM_CLK \n61 \nDO \nPCM 时钟",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5441732406616211
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "MP1-01",
+      "kind": "answerable",
+      "question": "MP1584的工作输入电压范围是多少伏？",
+      "source": "MP1584.pdf",
+      "reference_page": 1,
+      "reference_answer": "4.5至28 V。",
+      "anchors": [
+        [
+          "4.5V",
+          "28V",
+          "input"
+        ]
+      ],
+      "retrieval_ms": 27.05,
+      "hits": [
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6140977740287781
+        },
+        {
+          "text": "[第5页]\nMP1584 – 3A, 1.5MHz, 28V STEP-DOWN CONVERTER \n \nMP1584 Rev. 1.0 \nwww.MonolithicPower.com \n5 \n8/8/2011 \nMPS Proprietary Information. Unauthorized Photocopy and Duplication Prohibited. \n \n© 2011 MPS. All Rights Reserved. \nTYPICAL PERFORMANCE CHARACTERISTICS \nVIN = 12V, VOUT=5V, C1 = 10µF, C2 = 2",
+          "source": "MP1584.pdf",
+          "similarity": 0.5790656208992004
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5783575773239136
+        },
+        {
+          "text": "at 1.5MHz, the MP1584 is able to \nprevent EMI (Electromagnetic Interference) noise \nproblems, such as those found in AM radio and \nADSL applications. \nThe MP1584 is available in a thermally enhanced \nSOIC8E package. \nFEATURES \n \nWide 4.5V to 28V Operating Input Range \n \nProgrammable Switching Freq",
+          "source": "MP1584.pdf",
+          "similarity": 0.5774851441383362
+        },
+        {
+          "text": "[第3页]\nMP1584 – 3A, 1.5MHz, 28V STEP-DOWN CONVERTER \n \nMP1584 Rev. 1.0 \nwww.MonolithicPower.com \n3 \n8/8/2011 \nMPS Proprietary Information. Unauthorized Photocopy and Duplication Prohibited. \n \n© 2011 MPS. All Rights Reserved. \nELECTRICAL CHARACTERISTICS \nVIN = 12V, VEN = 2.5V, VCOMP = 1.4V, TA= +25C",
+          "source": "MP1584.pdf",
+          "similarity": 0.5675603151321411
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "MP1-02",
+      "kind": "answerable",
+      "question": "MP1584可编程开关频率的范围是多少？",
+      "source": "MP1584.pdf",
+      "reference_page": 1,
+      "reference_answer": "100 kHz至1.5 MHz。",
+      "anchors": [
+        [
+          "100kHz",
+          "1.5MHz",
+          "Frequency"
+        ]
+      ],
+      "retrieval_ms": 35.36,
+      "hits": [
+        {
+          "text": "at 1.5MHz, the MP1584 is able to \nprevent EMI (Electromagnetic Interference) noise \nproblems, such as those found in AM radio and \nADSL applications. \nThe MP1584 is available in a thermally enhanced \nSOIC8E package. \nFEATURES \n \nWide 4.5V to 28V Operating Input Range \n \nProgrammable Switching Freq",
+          "source": "MP1584.pdf",
+          "similarity": 0.5970938205718994
+        },
+        {
+          "text": "[第1页]\nMP1584 \n \n3A, 1.5MHz, 28V \n \nStep-Down Converter \n \n \nMP1584 Rev. 1.0 \nwww.MonolithicPower.com \n1 \n8/8/2011 \nMPS Proprietary Information. Unauthorized Photocopy and Duplication Prohibited. \n \n© 2011 MPS. All Rights Reserved. \nThe Future of Analog IC Technology\nDESCRIPTION \nThe MP1584 is a high",
+          "source": "MP1584.pdf",
+          "similarity": 0.587703287601471
+        },
+        {
+          "text": "ystem. The \nMP1584 can be optimized for a wide range of \ncapacitance and ESR values. \nCompensation Components \nMP1584 employs current mode control for easy \ncompensation and fast transient response. The \nsystem stability and transient response are \ncontrolled through the COMP pin. COMP pin is \nthe o",
+          "source": "MP1584.pdf",
+          "similarity": 0.5830918550491333
+        },
+        {
+          "text": "-39 dBm \n频段 \n接收灵敏度（典型值） \n主集 \n3GPP 要求 \nLTE-FDD B1 (10 MHz) \n-99 \n-96.3 \nLTE-FDD B3 (10 MHz) \n-99.5 \n-93.3 \nLTE-FDD B5 (10 MHz) \n-99 \n-94.3 \nLTE-FDD B8 (10 MHz) \n-99 \n-93.3 \nLTE-TDD B34 (10 MHz) \n-100 \n-96.3 \nLTE-TDD B38 (10 MHz) \n-100 \n-96.3",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.564234733581543
+        },
+        {
+          "text": "MPU-6050 can be accessed using either I2C at 400 kHz \nor SPI at 1MHz (MPU-6000 only).  SPI operates in four-wire mode.  \n \nSerial Interface  \nPin Number \nMPU-6000 \nMPU-6050 \nPin Name \nPin Description \n8 \nY \n \n/CS \nSPI chip select (0=SPI enable) \n8 \n \nY \nVLOGIC \nDigital I/O supply voltage.  VLOGIC mu",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5640947818756104
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "MP1-03",
+      "kind": "answerable",
+      "question": "MP1584的额定输出电流是多少A？",
+      "source": "MP1584.pdf",
+      "reference_page": 1,
+      "reference_answer": "3 A。",
+      "anchors": [
+        [
+          "3A",
+          "output"
+        ]
+      ],
+      "retrieval_ms": 38.25,
+      "hits": [
+        {
+          "text": "二、匝数计算\n以 220V 整流后约 310V 直流母线、输出 12V/5A、工作频率 65kHz、最大占空比 Dmax 取 0.45 为例。磁通密度摆幅 B 取 0.18T 留裕量，由公式 Np = Vdc × Dmax / (ΔB × f × Ae) 估算，初级匝数约 66 匝。次级按匝比折算，12V 输出考虑整流管压降 0.7V，取 3 匝。辅助绕组给 VCC 供电，取 9 匝。计算结果必须回到实际磁芯 AL 值复核电感量，不能只信公式。",
+          "source": "EE28变压器绕制笔记.txt",
+          "similarity": 0.6229062080383301
+        },
+        {
+          "text": "at 1.5MHz, the MP1584 is able to \nprevent EMI (Electromagnetic Interference) noise \nproblems, such as those found in AM radio and \nADSL applications. \nThe MP1584 is available in a thermally enhanced \nSOIC8E package. \nFEATURES \n \nWide 4.5V to 28V Operating Input Range \n \nProgrammable Switching Freq",
+          "source": "MP1584.pdf",
+          "similarity": 0.6059670448303223
+        },
+        {
+          "text": "[第1页]\nMP1584 \n \n3A, 1.5MHz, 28V \n \nStep-Down Converter \n \n \nMP1584 Rev. 1.0 \nwww.MonolithicPower.com \n1 \n8/8/2011 \nMPS Proprietary Information. Unauthorized Photocopy and Duplication Prohibited. \n \n© 2011 MPS. All Rights Reserved. \nThe Future of Analog IC Technology\nDESCRIPTION \nThe MP1584 is a high",
+          "source": "MP1584.pdf",
+          "similarity": 0.5853345990180969
+        },
+        {
+          "text": "最大输出功率37 mW @ THD = \n1 %，R = 32 Ω。 \n若输出功率无法满足需求，可用此接\n口驱动外部功放器件。 \n不用则悬空。 \nSPK_P \n22 \nAO \n模拟音频差分输出通道（+） \nMIC_N \n23 \nAI \n麦克风输入通道（-） \n不用则悬空。 \nMIC_P \n24 \nAI \n麦克风输入通道（+）",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.582239031791687
+        },
+        {
+          "text": "[第14页]\nMP1584 – 3A, 1.5MHz, 28V STEP-DOWN CONVERTER \n \nMP1584 Rev. 1.0 \nwww.MonolithicPower.com \n14 \n8/8/2011 \nMPS Proprietary Information. Unauthorized Photocopy and Duplication Prohibited. \n \n© 2011 MPS. All Rights Reserved. \nHigh Frequency Operation \nThe switching frequency of MP1584 can be \nprog",
+          "source": "MP1584.pdf",
+          "similarity": 0.5799170136451721
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "ADS-01",
+      "kind": "answerable",
+      "question": "ADS1115是几位的模数转换器？",
+      "source": "ADS1115.pdf",
+      "reference_page": 1,
+      "reference_answer": "16位ADC。",
+      "anchors": [
+        [
+          "16-bit",
+          "converter"
+        ]
+      ],
+      "retrieval_ms": 27.93,
+      "hits": [
+        {
+          "text": "N3\nAIN2\nADS1115\n1\n2\n3\n4\n5\n10\n9\n8\n7\n6\n0.1 μF (typ)\nFigure 9-1. Typical Connections of the ADS1115\nThe fully-differential voltage input of the ADS111x is ideal for connection to differential sources with moderately \nlow source impedance, such as thermocouples and thermistors. Although the ADS111x can",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5975298285484314
+        },
+        {
+          "text": "lder Links: ADS1113 ADS1114 ADS1115",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5864294767379761
+        },
+        {
+          "text": "he ADS1114 and ADS1115 also integrate a programmable gain amplifier (PGA) and a programmable \ndigital comparator. Figure 7-1, Figure 7-2, and Figure 7-3 show the functional block diagrams of the ADS1115, \nADS1114, and ADS1113, respectively.\nThe ADS111x ADC core measures a differential signal, VIN, t",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5686514973640442
+        },
+        {
+          "text": "[第29页]\n9.1.2 Single-Ended Inputs\nThe ADS1113 and ADS1114 can measure one, and the ADS1115 up to four, single-ended signals. The \nADS1113 and ADS1114 can measure single-ended signals by connecting AIN1 to GND externally. The ADS1115 \nmeasures single-ended signals by appropriate configuration of the M",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5617039203643799
+        },
+        {
+          "text": "tions\nThe principle I2C connections for the ADS1115 are shown in Figure 9-1.\nVDD\nSDA\nSCL\nGPIO\nMicrocontroller or\nMicroprocessor\nwith I2C Port\nInputs Selected\nfrom Configuration\nRegister\nVDD\n1-k\u0001 to 10-k\u0000 (typ)\nPullup Resistors\nADDR\nALERT/RDY\nGND\nAIN0\nAIN1\nSCL\nSDA\nVDD\nAIN3\nAIN2\nADS1115\n1\n2\n3\n4\n5\n10\n9",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5602190494537354
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "ADS-02",
+      "kind": "answerable",
+      "question": "ADS1115的供电电压范围是多少？",
+      "source": "ADS1115.pdf",
+      "reference_page": 1,
+      "reference_answer": "2.0至5.5 V。",
+      "anchors": [
+        [
+          "2.0V",
+          "5.5V",
+          "supply"
+        ]
+      ],
+      "retrieval_ms": 26.87,
+      "hits": [
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6142269968986511
+        },
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5963118672370911
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5941258668899536
+        },
+        {
+          "text": "[第48页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          47 / 85 \n表20：ADC 接口引脚描述 \n \n通过AT+QADC=<port>可以读取ADC 接口各引脚的电压值： \n \n⚫ \nAT+QADC=0：可用于读取ADC0 的电压值 \n⚫ \nAT+QADC=1：可用于读取ADC1 的电压值 \n \n如需了解更多相关AT 命令的信息，请参考文档 [2]。 \n \n表21：ADC 特性 \n备注 \n \n4.9. 指示信号 \n \n表22：指示接口引脚描述 \n引",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5893431305885315
+        },
+        {
+          "text": "26）。 \n8. 更新ADC 接口电压的最大值；新增分压电阻阻值\n及精度要求（第4.8 章）。 \n9. 更新耗流表（表32）。 \n10. 更新数字逻辑电平特性（第6.4 章）。 \n11. 更新模块推荐封装尺寸；新增EC600x 系列兼容封\n装（第7.2 章）。 \n12. 更新推荐钢网厚度；更新吸热区升温斜率、回流焊\n区升温斜率和冷却降温斜率，并新增相关备注（第\n8.2 章）。 \n13. 新增模块贴片方向章节（第8.3.3 章）。 \n1.2 \n2023-11-17 \nHowell KANG/ \nStefan FAN/ \nRonter ZHANG/ \nYule DENG/ \n1. \n新增子型号EC",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5871224403381348
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "ADS-03",
+      "kind": "answerable",
+      "question": "ADS1115支持多少路单端输入或差分输入？",
+      "source": "ADS1115.pdf",
+      "reference_page": 1,
+      "reference_answer": "4路单端或2路差分。",
+      "anchors": [
+        [
+          "four",
+          "single-ended",
+          "two",
+          "differential"
+        ]
+      ],
+      "retrieval_ms": 26.38,
+      "hits": [
+        {
+          "text": "N3\nAIN2\nADS1115\n1\n2\n3\n4\n5\n10\n9\n8\n7\n6\n0.1 μF (typ)\nFigure 9-1. Typical Connections of the ADS1115\nThe fully-differential voltage input of the ADS111x is ideal for connection to differential sources with moderately \nlow source impedance, such as thermocouples and thermistors. Although the ADS111x can",
+          "source": "ADS1115.pdf",
+          "similarity": 0.6318280696868896
+        },
+        {
+          "text": "[第29页]\n9.1.2 Single-Ended Inputs\nThe ADS1113 and ADS1114 can measure one, and the ADS1115 up to four, single-ended signals. The \nADS1113 and ADS1114 can measure single-ended signals by connecting AIN1 to GND externally. The ADS1115 \nmeasures single-ended signals by appropriate configuration of the M",
+          "source": "ADS1115.pdf",
+          "similarity": 0.6069744825363159
+        },
+        {
+          "text": "1115\nFigure 7-4. Input Multiplexer\nThe ADS1113 and ADS1114 do not have an input multiplexer and can measure either one differential signal \nor one single-ended signal. For single-ended measurements, connect the AIN1 pin to GND externally. In \nsubsequent sections of this data sheet, AINP refers to AI",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5999780893325806
+        },
+        {
+          "text": "lder Links: ADS1113 ADS1114 ADS1115",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5931575894355774
+        },
+        {
+          "text": "口（可选） \n⚫ \n支持1 路I2C 接口 \n⚫ \n符合I2C 总线协议规范 \nUSB 接口 \n⚫ \nUSB 2.0（只支持从模式），数据传输速率最大到480 Mbps \n⚫ \n用于AT 命令通信、数据传输、软件调试、固件升级 \n⚫ \nUSB 转串口驱动：支持Windows 8.1/10/11，Linux 2.6~6.7，Android 4.x~13.x\n等操作系统下的USB 驱动 \n强制下载接口 \n支持1 路强制下载接口 \nUART \n主UART： \n⚫ \nAT 命令通信和数据传输 \n⚫ \n波特率默认为115200 bps \n⚫ \n支持RTS 和CTS 硬件流控 \n调试UART： \n⚫ \n用",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5925217866897583
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "INA-01",
+      "kind": "answerable",
+      "question": "INA219能够检测的总线电压范围是多少？",
+      "source": "INA219.pdf",
+      "reference_page": 1,
+      "reference_answer": "0至26 V。",
+      "anchors": [
+        [
+          "0",
+          "26",
+          "bus"
+        ]
+      ],
+      "retrieval_ms": 33.6,
+      "hits": [
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5972598195075989
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5935484766960144
+        },
+        {
+          "text": "V \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT 和GND \n±5 \n±10 \nkV \n天线接口 \n±4 \n±8 \nkV \n其他接口 \n±0.5 \n±1 \nkV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.575086772441864
+        },
+        {
+          "text": "[第37页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          36 / 85 \n建议在MCU 与模块间串联一个共模电感L1 来抑制EMI。同时，建议在模块与测试点之间串联R1 和\nR2 电阻以便于调试，且电阻默认不贴。为了满足USB 数据线信号完整性的要求，L1、R1、R2 应靠近模\n块放置，且电阻之间需要靠近放置，连接测试点的桩线应保持尽量短。 \n \n为确保性能，USB 接口的电路设计应遵循以下原则： \n \n⚫ \nUSB 要求按照90 Ω 阻抗差分线设计，建议",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5734559297561646
+        },
+        {
+          "text": "-94.8 \nLTE-FDD B66 (10 MHz) \n-99.0 \n-96.5 \n若天线端口外围设计存在直流电，则必须在C3 位置贴隔直电容，防止发生对地短路，电容值建议为  \n100 pF，可根据实际要求调整。若外围设计中无直流电，则无需预留C3 位置。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5731011033058167
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "INA-02",
+      "kind": "answerable",
+      "question": "INA219自身需要的单电源供电范围是多少伏？",
+      "source": "INA219.pdf",
+      "reference_page": 1,
+      "reference_answer": "3至5.5 V。",
+      "anchors": [
+        [
+          "3-",
+          "5.5-V",
+          "supply"
+        ]
+      ],
+      "retrieval_ms": 34.51,
+      "hits": [
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6003482937812805
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.592234194278717
+        },
+        {
+          "text": "-94.8 \nLTE-FDD B66 (10 MHz) \n-99.0 \n-96.5 \n若天线端口外围设计存在直流电，则必须在C3 位置贴隔直电容，防止发生对地短路，电容值建议为  \n100 pF，可根据实际要求调整。若外围设计中无直流电，则无需预留C3 位置。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5573917031288147
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5488301515579224
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5442847609519958
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "INA-03",
+      "kind": "answerable",
+      "question": "INA219的I2C接口有多少个可编程地址？",
+      "source": "INA219.pdf",
+      "reference_page": 1,
+      "reference_answer": "16个可编程地址。",
+      "anchors": [
+        [
+          "16",
+          "programmable",
+          "addresses"
+        ]
+      ],
+      "retrieval_ms": 83.0,
+      "hits": [
+        {
+          "text": "，详情请参考文档 [3]。 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nI2C_SDA \n56 \nOD \nI2C 串行数据 \n需外部1.8 V 上拉。 \n不用则悬空。 \nI2C_SCL \n57 \nOD \nI2C 串行时钟",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5993777513504028
+        },
+        {
+          "text": "............................................................................................................................ 39 \n表16：PCM 接口引脚描述 ......................................................................................................................... 41 \n表17：I2C 接口引脚描述 ...............",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5938304662704468
+        },
+        {
+          "text": "e I2C interface is used throughout this data sheet as the primary example, with SMBus protocol specified only\nwhen a difference between the two systems is being addressed. Two bidirectional lines, SCL and SDA, connect\nthe INA219 to the bus. Both SCL and SDA are open-drain connections.\nThe device tha",
+          "source": "INA219.pdf",
+          "similarity": 0.5853208899497986
+        },
+        {
+          "text": "口（可选） \n⚫ \n支持1 路I2C 接口 \n⚫ \n符合I2C 总线协议规范 \nUSB 接口 \n⚫ \nUSB 2.0（只支持从模式），数据传输速率最大到480 Mbps \n⚫ \n用于AT 命令通信、数据传输、软件调试、固件升级 \n⚫ \nUSB 转串口驱动：支持Windows 8.1/10/11，Linux 2.6~6.7，Android 4.x~13.x\n等操作系统下的USB 驱动 \n强制下载接口 \n支持1 路强制下载接口 \nUART \n主UART： \n⚫ \nAT 命令通信和数据传输 \n⚫ \n波特率默认为115200 bps \n⚫ \n支持RTS 和CTS 硬件流控 \n调试UART： \n⚫ \n用",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5811404585838318
+        },
+        {
+          "text": "表17：I2C 接口引脚描述 ........................................................................................................................... 42 \n表18：模拟音频接口引脚描述 ................................................................................................................... 43 \n表19：摄像头接口引脚描述 ........",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5769696235656738
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "BME-01",
+      "kind": "answerable",
+      "question": "BME280的VDD主电源电压范围是多少？",
+      "source": "BME280.pdf",
+      "reference_page": 2,
+      "reference_answer": "1.71至3.6 V；应区别于VDDIO的1.2至3.6 V。",
+      "anchors": [
+        [
+          "1.71",
+          "3.6",
+          "supply"
+        ]
+      ],
+      "retrieval_ms": 47.61,
+      "hits": [
+        {
+          "text": "H)（栅极阈值电\n压）的最大值不超过1 V 的NMOS 管进行控制。 \n \n \n络状态指示； \n模块正常开机前禁止下拉此引\n脚。建议预留测试点。 \nSLEEP_IND \n53 \nDO \n睡眠模式指示 \n1.8 V 电压域。不用则悬空。 \nSTATUS \n54 \nDO \n运行状态指示 \nMAIN_RI \n40 \nDO \n主UART 输出振铃提示 \n引脚名 \n电平状态 \n模块网络状态 \nNET_MODE \n高电平 \n已注册到LTE 网络 \n低电平 \n其他 \nNET_STATUS/ \nUSB_BOOT \n慢闪（200 ms 高/1800 ms 低） \n搜网状态 \n慢闪（1800 ms 高/200 m",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6005305647850037
+        },
+        {
+          "text": "-94.8 \nLTE-FDD B66 (10 MHz) \n-99.0 \n-96.5 \n若天线端口外围设计存在直流电，则必须在C3 位置贴隔直电容，防止发生对地短路，电容值建议为  \n100 pF，可根据实际要求调整。若外围设计中无直流电，则无需预留C3 位置。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5954278111457825
+        },
+        {
+          "text": "为1 %电阻，如果对ADC 精度要求更高，则\n建议使用精度为0.5 %电阻。 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nNET_MODE \n52 \nDO \n网络注册状态指示 \n1.8 V 电压域。不用则悬空。 \nNET_STATUS/ \nUSB_BOOT \n55 \nDO \n网络状态指示 \n1.8 V 电压域。 \n模块正常开机后，该引脚用作网",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5953643321990967
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5927190780639648
+        },
+        {
+          "text": "件。 \nMIC_BIAS \n25 \nPO \n麦克风偏置电压",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5815937519073486
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "BME-02",
+      "kind": "answerable",
+      "question": "BME280在25°C、20至80%RH条件下的绝对湿度测量精度容差是多少？",
+      "source": "BME280.pdf",
+      "reference_page": 9,
+      "reference_answer": "绝对精度容差±3%RH，条件为25°C、20至80%RH，含迟滞。",
+      "anchors": [
+        [
+          "±3",
+          "accuracy"
+        ],
+        [
+          "±3",
+          "Absolute"
+        ]
+      ],
+      "retrieval_ms": 41.71,
+      "hits": [
+        {
+          "text": "ty limits in  bme280_selftest.h. The default limits are \n0…40°C for temperature and 900…1100 hPa for pressure measurement.  \n If you are using I²C communication with the address 0x77 (SDO pin high), then change the \nBME280.h line \n#define BME280_I2C_ADDRESS \nBME280_I2C_ADDRESS1 \ninto \n#define BME28",
+          "source": "BME280.pdf",
+          "similarity": 0.6047359704971313
+        },
+        {
+          "text": "[第1页]\nTL431, TL432 Precision Programmable Reference\n1 Features\n•\nReference voltage tolerance at 25°C\n–\n0.5% (B grade)\n–\n1% (A grade)\n–\n2% (Standard grade)\n•\nAdjustable output voltage: Vref to 36V\n•\nOperation from −40°C to 125°C\n•\nTypical temperature drift (TL43xB)\n–\n6mV (C temp)\n–\n14mV (I temp, Q te",
+          "source": "TL431.pdf",
+          "similarity": 0.5748492479324341
+        },
+        {
+          "text": "1.\nTypical values are measured at TA = 25°C.\n2.\nEvaluated by characterization, not tested in production, unless otherwise specified.\n0\n0.5\n1\n1.5\n2\n2.5\n –40 °C\n25 °C\n70 °C\n85 °C\n105 °C\nTemperature (°C)\nConsumption ( µA )\n2 V\n2.4 V\n3 V\n3.6 V\nai17351",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5661277770996094
+        },
+        {
+          "text": "°C/sec) \nA \nTroom \n25 \n \n \nB \nTSmin \n150 \n \n \nC \nTSmax \n200 \n60 < tBC < 120 \n \nD \nTLiquidus \n217 \n \nr(TLiquidus-TPmax) < 3 \nE \nTPmin  [255°C, 260°C] \n255 \n \nr(TLiquidus-TPmax) < 3 \nF \nTPmax  [ 260°C, 265°C] \n260 \ntAF < 480 \nr(TLiquidus-TPmax) < 3 \nG \nTPmin   [255°C, 260°C] \n255 \n10< tEG < 30 \nr(TPma",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5615777969360352
+        },
+        {
+          "text": "inimum and maximum values are guaranteed in the worst \nconditions of ambient temperature, supply voltage and frequencies by tests in production on \n100% of the devices with an ambient temperature at TA = 25°C and TA = TAmax (given by \nthe selected temperature range).\nData based on characterization r",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5570244789123535
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "BME-03",
+      "kind": "answerable",
+      "question": "BME280为什么推荐使用burst read连续读取数据，而不是逐个寄存器单独读取？",
+      "source": "BME280.pdf",
+      "reference_page": 23,
+      "reference_answer": "避免混用不同测量周期的数据字节，并减少接口通信流量。",
+      "anchors": [
+        [
+          "burst read",
+          "mix-up"
+        ],
+        [
+          "burst reads",
+          "inconsistent"
+        ]
+      ],
+      "retrieval_ms": 57.49,
+      "hits": [
+        {
+          "text": "instructions such as “Fast Read Dual Output (3Bh)” \nand “Fast Read Dual I/O (BBh)”. These instructions allow data to be transferred to or from the device at two \nto three times the rate of ordinary Serial Flash devices. The Dual SPI Read instructions are ideal for quickly \ndownloading code to RAM up",
+          "source": "W25Q64.pdf",
+          "similarity": 0.6475937366485596
+        },
+        {
+          "text": "transferred into \ndata registers as soon as the user ends the burst read, even if not all data registers were read.  \nThe end of the burst read is marked by the rising edge of CSB pin in SPI case or by the recognition of \na stop condition in I2C case. After the end of the burst read, all user data r",
+          "source": "BME280.pdf",
+          "similarity": 0.6460002660751343
+        },
+        {
+          "text": "he burst read, all user data registers are updated at \nonce.  \n4.2 Output compensation \nThe BME280 output consists of the ADC output values. However, each sensing element behaves \ndifferently. Therefore, the actual pressure and temperature must be calculated using a set of \ncalibration parameters. I",
+          "source": "BME280.pdf",
+          "similarity": 0.6323776245117188
+        },
+        {
+          "text": "e280.bus_read   = BME280_I2C_bus_read;  // must be defined by customer \nbme280.bus_write  = BME280_I2C_bus_write; // must be defined by customer \nbme280.delay_msec = BME280_delay_msec;    // must be defined by customer \n \n If necessary, adapt the measurement plausibility limits in  bme280_selftest.",
+          "source": "BME280.pdf",
+          "similarity": 0.6200262308120728
+        },
+        {
+          "text": "to a logic one to trigger the EEPROM read. The EEPROM read access takes one \ninstruction, and the requested data is available immediately. When the EEPROM is read, the CPU is halted for four cycles \nbefore the next instruction is executed.\nThe user should poll the EEPE bit before starting the read",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6162804961204529
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "LIS-01",
+      "kind": "answerable",
+      "question": "LIS3DH的供电电压（supply voltage）工作范围是多少伏？",
+      "source": "LIS3DH.pdf",
+      "reference_page": 1,
+      "reference_answer": "1.71 V至3.6 V。",
+      "anchors": [
+        [
+          "1.71",
+          "3.6",
+          "voltage"
+        ]
+      ],
+      "retrieval_ms": 44.55,
+      "hits": [
+        {
+          "text": "y Module \n通用用户识别模块 \nVILmax \nMaximum Low-level Input Voltage \n最大输入低电平 \nVmax \nMaximum Voltage \n最大电压 \nVmin \nMinimum Voltage \n最小电压 \nVnom \nNominal Voltage \n标称电压 \nVBAT \nVoltage at Battery (Pin) \n电池电压（引脚） \nVRWM \nWorking Peak Reverse Voltage \n反向工作峰值电压 \nVSWR \nVoltage Standing Wave Ratio \n电压驻波比",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5913263559341431
+        },
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5633524060249329
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5588491559028625
+        },
+        {
+          "text": "ve Ratio \n电压驻波比",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5561926960945129
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5547545552253723
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "LIS-02",
+      "kind": "answerable",
+      "question": "LIS3DH可动态选择的满量程加速度范围（full scale）有哪些档位？",
+      "source": "LIS3DH.pdf",
+      "reference_page": 1,
+      "reference_answer": "±2g/±4g/±8g/±16g动态可选满量程。",
+      "anchors": [
+        [
+          "dynamically",
+          "selectable",
+          "full",
+          "scale"
+        ]
+      ],
+      "retrieval_ms": 43.68,
+      "hits": [
+        {
+          "text": "ational modes that \nallow advanced power saving and smart \nembedded functions. \nThe LIS3DH has dynamically user-selectable full \nscales of 2g/±4g/8g/16g and is capable of \nmeasuring accelerations with output data rates \nfrom 1 Hz to 5.3 kHz. The self-test capability \nallows the user to check the",
+          "source": "LIS3DH.pdf",
+          "similarity": 0.5842302441596985
+        },
+        {
+          "text": "ts logical \nlevel on each compare match (COM0x1:0 = 1). The waveform generated will have a maximum frequency of fOC0 = fclk_I/O/2 \nwhen OCR0A is set to zero. This feature is similar to the OC0A toggle in CTC mode, except the double buffer feature of the \noutput compare unit is enabled in the fast PW",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5648756623268127
+        },
+        {
+          "text": "ng \nTA \nIndustrial \n–40 \n+85 \n°C \n \nNote: \n1. VCC voltage during Read can operate across the min and max range but should not exceed ±10% of the \nprogramming (erase/write) voltage.",
+          "source": "W25Q64.pdf",
+          "similarity": 0.5609459280967712
+        },
+        {
+          "text": "ng of interrupt generators are \nprogrammable by the end user on the fly. The \nLIS3DH has an integrated 32-level first-in, first-\nout (FIFO) buffer allowing the user to store data in \norder to limit intervention by the host processor. \nThe LIS3DH is available in small thin plastic land \ngrid array pa",
+          "source": "LIS3DH.pdf",
+          "similarity": 0.5574772357940674
+        },
+        {
+          "text": "ly loaded into the register. Multiplying this result by the Power register LSB 20 × 10–3(20 times 1 ×\n10–3 current LSB using Equation 3), results in a power calculation of 5990 × 20 mW/bit, and equals 119.8 W.\nThis result matches what is expected for this register. A calculation for the power delive",
+          "source": "INA219.pdf",
+          "similarity": 0.5534833669662476
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "LIS-03",
+      "kind": "answerable",
+      "question": "LIS3DH的数据输出位数（data output）是多少位？",
+      "source": "LIS3DH.pdf",
+      "reference_page": 1,
+      "reference_answer": "16位数据输出。",
+      "anchors": [
+        [
+          "16-bit",
+          "output"
+        ]
+      ],
+      "retrieval_ms": 45.04,
+      "hits": [
+        {
+          "text": "[第19页]\nDocID17530 Rev 2\n19/54\nLIS3DH\nTerminology and functionality\n54\nThe LIS3DH features a Data-Ready signal (DRDY) which indicates when a new set of \nmeasured acceleration data is available, thus simplifying data synchronization in the digital \nsystem that uses the device.\nThe LIS3DH may also be c",
+          "source": "LIS3DH.pdf",
+          "similarity": 0.611340343952179
+        },
+        {
+          "text": "[第22页]\nDigital main blocks\nLIS3DH\n22/54\nDocID17530 Rev 2\n5 \nDigital main blocks\n5.1 \nFIFO\nThe LIS3DH embeds a 32-level FIFO for each of the three output channels, X, Y and Z.\nThis allows consistent power saving for the system, since the host processor does not need \nto continuously poll data from th",
+          "source": "LIS3DH.pdf",
+          "similarity": 0.6070258617401123
+        },
+        {
+          "text": "[第26页]\nDigital interfaces\nLIS3DH\n26/54\nDocID17530 Rev 2\nData are transmitted in byte format (DATA). Each data transfer contains 8 bits. The number \nof bytes transferred per transfer is unlimited. Data is transferred with the Most Significant bit \n(MSb) first. If a receiver can’t receive another comp",
+          "source": "LIS3DH.pdf",
+          "similarity": 0.5919772386550903
+        },
+        {
+          "text": "[第23页]\n7.5.4 Data Format\nThe ADS111x provide 16 bits of data in binary 2's-complement format. A positive full-scale (+FS) input produces \nan output code of 7FFFh and a negative full-scale (–FS) input produces an output code of 8000h. The output \nclips at these codes for signals that exceed full-scal",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5816267132759094
+        },
+        {
+          "text": ": 0\n(0: no overrun has occurred; 1: a new set of data has overwritten the previous set)\n3OR\n3-axis data overrun. Default value: 0\n(0: no overrun has occurred; \n1: new data for the 3-axis has overwritten the previous data)\n2OR\n2-axis data overrun. Default value: 0\n(0: no overrun has occurred; \n1: new",
+          "source": "LIS3DH.pdf",
+          "similarity": 0.5743038058280945
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "MPU-01",
+      "kind": "answerable",
+      "question": "MPU-6050的角速度陀螺仪（gyroscope）用户可编程满量程范围有哪些档位？",
+      "source": "MPU6050.pdf",
+      "reference_page": 10,
+      "reference_answer": "±250, ±500, ±1000, and ±2000°/sec。",
+      "anchors": [
+        [
+          "250",
+          "500",
+          "1000",
+          "2000"
+        ]
+      ],
+      "retrieval_ms": 37.91,
+      "hits": [
+        {
+          "text": "MPU-6050 can be accessed using either I2C at 400 kHz \nor SPI at 1MHz (MPU-6000 only).  SPI operates in four-wire mode.  \n \nSerial Interface  \nPin Number \nMPU-6000 \nMPU-6050 \nPin Name \nPin Description \n8 \nY \n \n/CS \nSPI chip select (0=SPI enable) \n8 \n \nY \nVLOGIC \nDigital I/O supply voltage.  VLOGIC mu",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5659622550010681
+        },
+        {
+          "text": "on the achieved speed is ±2%. These variations depend upon the accuracy of the external \ncomponents used to design the application.\nfSCL (kHz)\nI2C_CCR value\nRP = 4.7 kΩ\n400\n0x801E\n300\n0x8028\n200\n0x803C\n100\n0x00B4\n50\n0x0168\n20\n0x0384\nai14133g\nStart\nSDA\nI²C bus\nVDD_I2C\nVDD_I2C\nSTM32F10x\nSDA\nSCL\ntf(SD",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5551508665084839
+        },
+        {
+          "text": "40 °C \n \n±0.12 \n \nhPa \nResolution of \npressure output data  \nRP \nHighest oversampling \n \n0.18 \n \nPa \nNoise in pressure \nNP,fullBW \nFull bandwidth, \nhighest oversampling \nSee chapter 3.6 \n \n1.3 \n \nPa \n \n11 \n \ncm \nNP,filtered \nReduced bandwidth, \nhighest oversampling \nSee chapter 3.6 \n \n0.2 \n \nPa",
+          "source": "BME280.pdf",
+          "similarity": 0.5421414375305176
+        },
+        {
+          "text": "符合USB 2.0 规范。 \n要求90 Ω差分阻抗。 \n须预留测试点。 \nUSB_DM \n27 \nAIO \nUSB 2.0 差分数据\n（-）",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5400320887565613
+        },
+        {
+          "text": "nd complex selection, qualification, and system level integration of discrete devices, guaranteeing \noptimal motion performance for consumers.  The MPU-60X0 is also designed to interface with multiple non-\ninertial digital sensors, such as pressure sensors, on its auxiliary I2C port.  The MPU-60X0 i",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5399858951568604
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "MPU-02",
+      "kind": "answerable",
+      "question": "MPU-6050内置的模数转换器ADC采样分辨率是多少位？",
+      "source": "MPU6050.pdf",
+      "reference_page": 10,
+      "reference_answer": "集成16-bit ADC支持同步采样。",
+      "anchors": [
+        [
+          "16-bit",
+          "ADCs"
+        ]
+      ],
+      "retrieval_ms": 76.07,
+      "hits": [
+        {
+          "text": "MPU-6050 can be accessed using either I2C at 400 kHz \nor SPI at 1MHz (MPU-6000 only).  SPI operates in four-wire mode.  \n \nSerial Interface  \nPin Number \nMPU-6000 \nMPU-6050 \nPin Name \nPin Description \n8 \nY \n \n/CS \nSPI chip select (0=SPI enable) \n8 \n \nY \nVLOGIC \nDigital I/O supply voltage.  VLOGIC mu",
+          "source": "MPU6050.pdf",
+          "similarity": 0.6277943253517151
+        },
+        {
+          "text": "iary I2C port.  The MPU-60X0 is footprint \ncompatible with the MPU-30X0 family. \nThe MPU-60X0 features three 16-bit analog-to-digital converters (ADCs) for digitizing the gyroscope outputs \nand three 16-bit ADCs for digitizing the accelerometer outputs.  For precision tracking of both fast and slow",
+          "source": "MPU6050.pdf",
+          "similarity": 0.6030822992324829
+        },
+        {
+          "text": "[第24页]\nMPU-6000/MPU-6050 Product Specification \nDocument Number: PS-MPU-6000A-00 \nRevision: 3.4 \nRelease Date: 08/19/2013 \n \n           24 of 52 \n7.5 \nBlock Diagram  \n \nCLOCK\nMPU-60X0\nCharge \nPump\n(/CS)\nAD0 / (SDO)\nSCL / (SCLK)\nSDA / (SDI)\nTemp Sensor\nADC\nADC\nZ Gyro\nADC\nY Gyro\nDigital Motion \nProces",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5884750485420227
+        },
+        {
+          "text": "4.9. 指示信号 \n \n表22：指示接口引脚描述 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nADC0 \n19 \nAI \n通用ADC 接口 \n不用则悬空。 \nADC1 \n20 \nAI \n参数 \n最小值 \n典型值 \n最大值 \n单位 \nADC0 输入电压范围 \n0 \n- \n1.2 \nV \nADC1 输入电压范围 \n0 \n- \n1.2 \nV \nADC 分辨率 \n- \n12 \n- \n位 \n1. ADC 接口设计时需预留分压电路，分压电路的两个电阻阻值要求大于100 kΩ。 \n2. 分压电阻精度对ADC 采样误差会有影响，推荐使用精度为1 %电阻，如果对ADC 精度要求更高，则\n建议使用精度为",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5854154825210571
+        },
+        {
+          "text": "500, ±1000, or ±2000 degrees per second (dps).  The ADC sample \nrate is programmable from 8,000 samples per second, down to 3.9 samples per second, and user-selectable \nlow-pass filters enable a wide range of cut-off frequencies. \n \n7.8 \nThree-Axis MEMS Accelerometer with 16-bit ADCs and Signal Cond",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5788983106613159
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "MPU-03",
+      "kind": "answerable",
+      "question": "MPU-6050的三轴加速度计在AFS_SEL满量程配置下支持哪些量程档位？",
+      "source": "MPU6050.pdf",
+      "reference_page": 13,
+      "reference_answer": "±2g, ±4g, ±8g, ±16g。",
+      "anchors": [
+        [
+          "AFS_SEL",
+          "Full-Scale",
+          "Range"
+        ]
+      ],
+      "retrieval_ms": 48.98,
+      "hits": [
+        {
+          "text": "MPU-6050 can be accessed using either I2C at 400 kHz \nor SPI at 1MHz (MPU-6000 only).  SPI operates in four-wire mode.  \n \nSerial Interface  \nPin Number \nMPU-6000 \nMPU-6050 \nPin Name \nPin Description \n8 \nY \n \n/CS \nSPI chip select (0=SPI enable) \n8 \n \nY \nVLOGIC \nDigital I/O supply voltage.  VLOGIC mu",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5818090438842773
+        },
+        {
+          "text": "ter to the MPU-60X0. In addition, the MPU-60X0 is an \nI2C master to the optional external compass sensor. The MPU-60X0 has limited capabilities as an I2C \nMaster, and depends on the system processor to manage the initial configuration of any auxiliary sensors. \nThe MPU-60X0 has an interface bypass m",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5707668662071228
+        },
+        {
+          "text": "on the achieved speed is ±2%. These variations depend upon the accuracy of the external \ncomponents used to design the application.\nfSCL (kHz)\nI2C_CCR value\nRP = 4.7 kΩ\n400\n0x801E\n300\n0x8028\n200\n0x803C\n100\n0x00B4\n50\n0x0168\n20\n0x0384\nai14133g\nStart\nSDA\nI²C bus\nVDD_I2C\nVDD_I2C\nSTM32F10x\nSDA\nSCL\ntf(SD",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5692363381385803
+        },
+        {
+          "text": "[第19页]\nMPU-6000/MPU-6050 Product Specification \nDocument Number: PS-MPU-6000A-00 \nRevision: 3.4 \nRelease Date: 08/19/2013 \n \n           19 of 52 \n6.8 \nSPI Timing Characterization (MPU-6000 only)  \nTypical Operating Circuit of Section 7.2, VDD = 2.375V-3.46V, VLOGIC (MPU-6050 only) = 1.8V±5% or \nVDD,",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5635522603988647
+        },
+        {
+          "text": "[第18页]\nMPU-6000/MPU-6050 Product Specification \nDocument Number: PS-MPU-6000A-00 \nRevision: 3.4 \nRelease Date: 08/19/2013 \n \n           18 of 52 \n6.7 \nI2C Timing Characterization \nTypical Operating Circuit of Section 7.2, VDD = 2.375V-3.46V, VLOGIC (MPU-6050 only) = 1.8V±5% or \nVDD, TA = 25°C \nParam",
+          "source": "MPU6050.pdf",
+          "similarity": 0.56183260679245
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "W25-01",
+      "kind": "answerable",
+      "question": "W25Q64JV串行Flash存储器的存储容量是多少M-bit？",
+      "source": "W25Q64.pdf",
+      "reference_page": 5,
+      "reference_answer": "64M-bit。",
+      "anchors": [
+        [
+          "64M-bit",
+          "Serial",
+          "Flash"
+        ]
+      ],
+      "retrieval_ms": 29.87,
+      "hits": [
+        {
+          "text": "[第5页]\nW25Q64JV \n \nPublication Release Date: August 30, 2016 \n- 4 -                                  Revision D \n1. GENERAL DESCRIPTIONS \nThe W25Q64JV (64M-bit) Serial Flash memory provides a storage solution for systems with limited space, \npins and power. The 25Q series offers flexibility and perfo",
+          "source": "W25Q64.pdf",
+          "similarity": 0.6363110542297363
+        },
+        {
+          "text": "re 16 or 32 bits wide, the flash is organized as 16K 16. For software security, the flash program memory space \nis divided into two sections, boot loader section and application program section in ATmega328P. See SELFPRGEN \ndescription in Section 25.3.1 “SPMCSR – Store Program Memory Control and St",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6348973512649536
+        },
+        {
+          "text": "[第142页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n142\n•\nBit 5..1 – Res: Reserved Bits\nThese bits are reserved bits in the Atmel® ATmega328P and will always read as zero.\n•\nBit 0 – SPI2X: Double SPI Speed Bit\nWhen this bit is written logic one the SPI speed (SCK frequency) will be doubled when the SPI i",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6276770234107971
+        },
+        {
+          "text": "fy when placing orders. \n \n W(1) 25Q  64J  V xx(2)  I \nW  =  Winbond \n25Q  =  SpiFlash Serial Flash Memory with 4KB sectors, Dual/Quad I/O \n64J  =  64M-bit \n \nV  =  2.7V to 3.6V \n \nSS = 8-pin SOIC 208-mil    ST = 8-pin VSOP 208-mil    SF = 16-pin SOIC 300-mil \nDA = 8-pin PDIP 300-mil    ZP = WSON8 6",
+          "source": "W25Q64.pdf",
+          "similarity": 0.6224483251571655
+        },
+        {
+          "text": "fice.\n \nExample:\nSTM32\nF 103 C\n8\nT\n7\nxxxx\nDevice family\nSTM32 = Arm-based 32-bit microcontroller\nProduct type\nF = General-purpose\nDevice subfamily\n103 = Performance line\nPin count\nT = 36 pins\nC = 48 pins\nR = 64 pins\nV = 100 pins\nFlash memory size\n8 = 64 Kbytes of Flash memory\nB = 128 Kbytes of Flash",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.6220487356185913
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "W25-02",
+      "kind": "answerable",
+      "question": "W25Q64JV的工作供电电源电压范围是多少伏？",
+      "source": "W25Q64.pdf",
+      "reference_page": 5,
+      "reference_answer": "2.7V至3.6V电源供电。",
+      "anchors": [
+        [
+          "2.7V",
+          "3.6V",
+          "supply"
+        ]
+      ],
+      "retrieval_ms": 37.44,
+      "hits": [
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.6191874146461487
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.614853024482727
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5819225907325745
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.562307596206665
+        },
+        {
+          "text": "为1 %电阻，如果对ADC 精度要求更高，则\n建议使用精度为0.5 %电阻。 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nNET_MODE \n52 \nDO \n网络注册状态指示 \n1.8 V 电压域。不用则悬空。 \nNET_STATUS/ \nUSB_BOOT \n55 \nDO \n网络状态指示 \n1.8 V 电压域。 \n模块正常开机后，该引脚用作网",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5618910193443298
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "W25-03",
+      "kind": "answerable",
+      "question": "W25Q64JV在掉电模式（power-down）下的电流消耗可低至多少微安？",
+      "source": "W25Q64.pdf",
+      "reference_page": 5,
+      "reference_answer": "低至1µA。",
+      "anchors": [
+        [
+          "1µA",
+          "power-down"
+        ],
+        [
+          "1uA",
+          "power-down"
+        ]
+      ],
+      "retrieval_ms": 30.27,
+      "hits": [
+        {
+          "text": "二、匝数计算\n以 220V 整流后约 310V 直流母线、输出 12V/5A、工作频率 65kHz、最大占空比 Dmax 取 0.45 为例。磁通密度摆幅 B 取 0.18T 留裕量，由公式 Np = Vdc × Dmax / (ΔB × f × Ae) 估算，初级匝数约 66 匝。次级按匝比折算，12V 输出考虑整流管压降 0.7V，取 3 匝。辅助绕组给 VCC 供电，取 9 匝。计算结果必须回到实际磁芯 AL 值复核电感量，不能只信公式。",
+          "source": "EE28变压器绕制笔记.txt",
+          "similarity": 0.6209713816642761
+        },
+        {
+          "text": ".2 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.597649097442627
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5950974225997925
+        },
+        {
+          "text": "2.2 \nV \nVBAT_BB 电流 \n- \n0.5 \nA \nVBAT_RF 电流 \n- \n1.0 \nA \nADC[0:1]电压 \n0 \n1.2 \nV \n参数 \n描述 \n条件 \n最小值 \n典型值 \n最大值 \n单位 \nVBAT \nVBAT_BB 和\nVBAT_RF \n实际输入电压必须在该范围之内 \n3.4 \n3.8 \n4.3 \nV \nIVBAT \n峰值耗流 \n处于最大发射功率等级时 \n- \n- \n1.5 \nA \nUSB_VBUS \nUSB 连接检测 \n- \n3.0 \n5.0 \n5.25 \nV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5900814533233643
+        },
+        {
+          "text": "Power-down mode(3)\nWDT enabled, VCC = 3V\n44\nµA\nWDT enabled, VCC = 5V\n66\nµA\nWDT disabled, VCC = 3V\n40\nµA\nWDT disabled, VCC = 5V\n60\nµA\nNotes:\n1.\nValues with Section 9.10 “Minimizing Power Consumption” on page 36 enabled (0xFF).\n2.\nTypical values at 25°C.\n3.\nThe current consumption values include inpu",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5887182354927063
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "TMP-01",
+      "kind": "answerable",
+      "question": "TMP102数字温度传感器的测量分辨率（resolution）是多少位？",
+      "source": "TMP102.pdf",
+      "reference_page": 1,
+      "reference_answer": "12位（12 bits）。",
+      "anchors": [
+        [
+          "Resolution",
+          "12",
+          "bits"
+        ]
+      ],
+      "retrieval_ms": 75.93,
+      "hits": [
+        {
+          "text": "this \ntest, the TMP102 device was soldered to a two-layer PCB that measured 0.375 inch × 0.437 inch.\nspace\nTime (s)\nTemperature (qC)\n-1\n1\n3\n5\n7\n9\n11\n13\n15\n17\n19\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75\n80\n85\n90\n95\n100\nFigure 7-3. Temperature Step Response\n7.3 Power Supply Recommendations\nThe TMP102 device",
+          "source": "TMP102.pdf",
+          "similarity": 0.5837752819061279
+        },
+        {
+          "text": "[第1页]\nTMP102 Low-Power Digital Temperature Sensor With SMBus and Two-Wire Serial \nInterface in SOT563\n1 Features\n•\nSOT563 package (1.6mm × 1.6mm) is a 68% \nsmaller footprint than SOT-23\n•\nAccuracy without calibration:\n–\n2.0°C (maximum) from –25°C to 85°C\n–\n3.0°C (maximum) from –40°C to 125°C\n•\nLow q",
+          "source": "TMP102.pdf",
+          "similarity": 0.5726785659790039
+        },
+        {
+          "text": "surface temperature measurement.\nThe TMP102 device is a very low-power device and generates very low noise on the supply bus. Applying an RC \nfilter to the V+ pin of the TMP102 device can further reduce any noise that the TMP102 device can propagate to \nother components. R(F) in Figure 7-2 must be l",
+          "source": "TMP102.pdf",
+          "similarity": 0.5622118711471558
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.554792046546936
+        },
+        {
+          "text": "[第13页]\nMPU-6000/MPU-6050 Product Specification \nDocument Number: PS-MPU-6000A-00 \nRevision: 3.4 \nRelease Date: 08/19/2013 \n \n           13 of 52 \n6.2 \nAccelerometer Specifications \nVDD = 2.375V-3.46V, VLOGIC (MPU-6050 only) = 1.8V±5% or VDD, TA = 25°C \nPARAMETER \nCONDITIONS \nMIN \nTYP \nMAX \nUNITS \nNO",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5488412380218506
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "TMP-02",
+      "kind": "answerable",
+      "question": "TMP102的工作电源供电范围（supply range）是多少伏？",
+      "source": "TMP102.pdf",
+      "reference_page": 1,
+      "reference_answer": "1.4V至3.6V。",
+      "anchors": [
+        [
+          "1.4V",
+          "3.6V",
+          "Supply"
+        ]
+      ],
+      "retrieval_ms": 32.02,
+      "hits": [
+        {
+          "text": "this \ntest, the TMP102 device was soldered to a two-layer PCB that measured 0.375 inch × 0.437 inch.\nspace\nTime (s)\nTemperature (qC)\n-1\n1\n3\n5\n7\n9\n11\n13\n15\n17\n19\n25\n30\n35\n40\n45\n50\n55\n60\n65\n70\n75\n80\n85\n90\n95\n100\nFigure 7-3. Temperature Step Response\n7.3 Power Supply Recommendations\nThe TMP102 device",
+          "source": "TMP102.pdf",
+          "similarity": 0.5830367803573608
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5743330717086792
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5703709125518799
+        },
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5664709806442261
+        },
+        {
+          "text": "V \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT 和GND \n±5 \n±10 \nkV \n天线接口 \n±4 \n±8 \nkV \n其他接口 \n±0.5 \n±1 \nkV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.560930609703064
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "TMP-03",
+      "kind": "answerable",
+      "question": "TMP102在活动状态（active）下的最大静态电流是多少微安？",
+      "source": "TMP102.pdf",
+      "reference_page": 1,
+      "reference_answer": "最大7.5μA。",
+      "anchors": [
+        [
+          "7.5",
+          "active"
+        ]
+      ],
+      "retrieval_ms": 35.05,
+      "hits": [
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5801917314529419
+        },
+        {
+          "text": "H)（栅极阈值电\n压）的最大值不超过1 V 的NMOS 管进行控制。 \n \n \n络状态指示； \n模块正常开机前禁止下拉此引\n脚。建议预留测试点。 \nSLEEP_IND \n53 \nDO \n睡眠模式指示 \n1.8 V 电压域。不用则悬空。 \nSTATUS \n54 \nDO \n运行状态指示 \nMAIN_RI \n40 \nDO \n主UART 输出振铃提示 \n引脚名 \n电平状态 \n模块网络状态 \nNET_MODE \n高电平 \n已注册到LTE 网络 \n低电平 \n其他 \nNET_STATUS/ \nUSB_BOOT \n慢闪（200 ms 高/1800 ms 低） \n搜网状态 \n慢闪（1800 ms 高/200 m",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.578360378742218
+        },
+        {
+          "text": "[第67页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          66 / 85 \n表45：USIM 卡3.0 V I/O 要求 \n \n6.5. 静电防护 \n \n由于人体静电、微电子间带电摩擦等产生的静电会通过各种途径放电给模块，并可能对模块造成一定\n的损坏，因此应重视静电防护并采取合理的静电防护措施。例如：在研发、生产、组装和测试等过程中，\n佩戴防静电手套；设计产品时，在电路接口处和其他易受静电放电影响的点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5584749579429626
+        },
+        {
+          "text": "帧同步 \n1.8 V 电压域。 \n不用则悬空。 \nPCM_DIN \n59 \nDI \nPCM 数据输入 \nPCM_DOUT \n60 \nDO \nPCM 数据输出 \nPCM_CLK \n61 \nDO \nPCM 时钟",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5398007035255432
+        },
+        {
+          "text": "2.2 \nV \nVBAT_BB 电流 \n- \n0.5 \nA \nVBAT_RF 电流 \n- \n1.0 \nA \nADC[0:1]电压 \n0 \n1.2 \nV \n参数 \n描述 \n条件 \n最小值 \n典型值 \n最大值 \n单位 \nVBAT \nVBAT_BB 和\nVBAT_RF \n实际输入电压必须在该范围之内 \n3.4 \n3.8 \n4.3 \nV \nIVBAT \n峰值耗流 \n处于最大发射功率等级时 \n- \n- \n1.5 \nA \nUSB_VBUS \nUSB 连接检测 \n- \n3.0 \n5.0 \n5.25 \nV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.537441611289978
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "IN2-01",
+      "kind": "answerable",
+      "question": "INA226能够检测的总线电压（bus voltage）范围是多少？",
+      "source": "INA226.pdf",
+      "reference_page": 1,
+      "reference_answer": "0V至36V。",
+      "anchors": [
+        [
+          "0V",
+          "36V",
+          "bus"
+        ]
+      ],
+      "retrieval_ms": 57.09,
+      "hits": [
+        {
+          "text": "[第1页]\nINA226 36V, 16-Bit, Ultra-Precise I2C Output Current, Voltage, and Power Monitor With \nAlert\n1 Features\n•\nSenses bus voltages from 0V to 36V\n•\nHigh-side or low-side sensing\n•\nReports current, voltage, and power\n•\nHigh accuracy:\n–\nGain error: 0.1% (maximum)\n–\nOffset: 10μV (maximum)\n•\nConfigurab",
+          "source": "INA226.pdf",
+          "similarity": 0.5976271033287048
+        },
+        {
+          "text": "[第6页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          5 / 85 \n5. \n新增天线调谐器控制接口（表6、第5.1.2 章）。 \n6. \n删除按钮开机参考电路的1 kΩ 电阻（图11）。 \n7. \n更新数字接口电压的最大值和ADC[0:1]电压的最\n小值（表35）。 \n8. \n更新EC600M-CN 的功耗（表37）。 \n9. \n更新ESD 性能参数的天线接口数据（表42）。 \n1.3 \n2024-10-10 \nKelly WANG/ \nStefan F",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5887894630432129
+        },
+        {
+          "text": "V \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT 和GND \n±5 \n±10 \nkV \n天线接口 \n±4 \n±8 \nkV \n其他接口 \n±0.5 \n±1 \nkV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5816932916641235
+        },
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5772110223770142
+        },
+        {
+          "text": "-94.8 \nLTE-FDD B66 (10 MHz) \n-99.0 \n-96.5 \n若天线端口外围设计存在直流电，则必须在C3 位置贴隔直电容，防止发生对地短路，电容值建议为  \n100 pF，可根据实际要求调整。若外围设计中无直流电，则无需预留C3 位置。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.570236086845398
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "IN2-02",
+      "kind": "answerable",
+      "question": "INA226自身需要的工作电源供电范围（power supply）是多少伏？",
+      "source": "INA226.pdf",
+      "reference_page": 1,
+      "reference_answer": "2.7V至5.5V。",
+      "anchors": [
+        [
+          "2.7V",
+          "5.5V",
+          "supply"
+        ]
+      ],
+      "retrieval_ms": 34.22,
+      "hits": [
+        {
+          "text": "5\nVBAT \n100 nF\n470 μF\n100 nF\n100K\n47K\n470 μF\n330R\n51K\n1%\n1%\n4.7K\n47K\nVBAT_EN\n \n图8：供电输入参考电路图 \n \n3.5.1. 电源电压检测 \nAT+CBC 可以用来监测、查询当前VBAT_BB 的电压，详情请咨询移远通信技术支持。 \n \n3.5.2. 电压稳定性要求 \n模块的供电范围为3.4~4.3 V，需要确保输入电压不低于3.4 V。 \n \n为了减少电压跌落，需要使用低ESR （ESR ≤ 0.7 Ω）的100 μF 滤波电容。同时建议分别给VBAT_BB\n和VBAT_RF 预留3 个（100 nF、10 pF",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5893903374671936
+        },
+        {
+          "text": "点位增加防静电保护器件。 \n \n表46：ESD 性能参数（温度：25~30 ºC，湿度：40 ±5 %） \n \n \n \n \n \n \n \n \n \n \n参数 \n描述 \n最小值 \n最大值 \n单位 \nUSIM_VDD \n供电 \n2.7 \n3.3 \nV \nVIH \n输入高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVIL \n输入低电平 \n0 \n0.15 × USIM_VDD \nV \nVOH \n输出高电平 \n0.7 × USIM_VDD \nUSIM_VDD \nV \nVOL \n输出低电平 \n0 \n0.15 × USIM_VDD \nV \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5544219017028809
+        },
+        {
+          "text": "[第30页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          29 / 85 \n \n3.5. 供电参考 \n \n电源设计对模块性能至关重要。供电给模块的电流至少需要1.5 A。若输入电压与模块供电电压之间的\n电压差较小，则建议选择LDO。若输入与供电电压之间的电压差较大，则建议使用开关电源转换器。 \n \n下图是5 V 供电电路的参考设计。 \nDC_IN\nIN\nOUT\nEN\nGND\nADJ\n2\n4\n1\n3\n5\nVBAT \n100 nF\n470 μF\n100 nF\n1",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5479171872138977
+        },
+        {
+          "text": "-94.8 \nLTE-FDD B66 (10 MHz) \n-99.0 \n-96.5 \n若天线端口外围设计存在直流电，则必须在C3 位置贴隔直电容，防止发生对地短路，电容值建议为  \n100 pF，可根据实际要求调整。若外围设计中无直流电，则无需预留C3 位置。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5358683466911316
+        },
+        {
+          "text": "V \n测试点 \n接触放电 \n空气放电 \n单位 \nVBAT 和GND \n±5 \n±10 \nkV \n天线接口 \n±4 \n±8 \nkV \n其他接口 \n±0.5 \n±1 \nkV",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5251232981681824
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "IN2-03",
+      "kind": "answerable",
+      "question": "INA226的I2C总线上支持多少个可编程地址（programmable addresses）？",
+      "source": "INA226.pdf",
+      "reference_page": 1,
+      "reference_answer": "16个可编程地址。",
+      "anchors": [
+        [
+          "16",
+          "programmable",
+          "addresses"
+        ]
+      ],
+      "retrieval_ms": 35.7,
+      "hits": [
+        {
+          "text": "口（可选） \n⚫ \n支持1 路I2C 接口 \n⚫ \n符合I2C 总线协议规范 \nUSB 接口 \n⚫ \nUSB 2.0（只支持从模式），数据传输速率最大到480 Mbps \n⚫ \n用于AT 命令通信、数据传输、软件调试、固件升级 \n⚫ \nUSB 转串口驱动：支持Windows 8.1/10/11，Linux 2.6~6.7，Android 4.x~13.x\n等操作系统下的USB 驱动 \n强制下载接口 \n支持1 路强制下载接口 \nUART \n主UART： \n⚫ \nAT 命令通信和数据传输 \n⚫ \n波特率默认为115200 bps \n⚫ \n支持RTS 和CTS 硬件流控 \n调试UART： \n⚫ \n用",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5951734185218811
+        },
+        {
+          "text": "connects the processor I2C interface pins to the sensor I2C \ninterface pins. \nSince the MPU-6000 has limited capabilities as an I2C Master, and depends on the system processor to \nmanage the initial configuration of any auxiliary sensors, another method must be used for programming the \nsensors on",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5896711349487305
+        },
+        {
+          "text": "be connected to the same I2C bus.  \nWhen used in this configuration, the address of the one of the devices should be b1101000 (pin AD0 is logic \nlow) and the address of the other should be b1101001 (pin AD0 is logic high).  \n \n9.3 \nI2C Communications Protocol \nSTART (S) and STOP (P) Conditions \nComm",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5768684148788452
+        },
+        {
+          "text": "[第31页]\n9.1.6 Connecting Multiple Devices\nUp to four ADS111x devices can be connected to a single I2C bus using different address pin configurations for \neach device. Use the address pin to set the ADS111x to one of four different I2C addresses. Use the GND, VDD, \nand SCL addresses first. If SDA is u",
+          "source": "ADS1115.pdf",
+          "similarity": 0.5767536759376526
+        },
+        {
+          "text": "e I2C interface is used throughout this data sheet as the primary example, with SMBus protocol specified only\nwhen a difference between the two systems is being addressed. Two bidirectional lines, SCL and SDA, connect\nthe INA219 to the bus. Both SCL and SDA are open-drain connections.\nThe device tha",
+          "source": "INA219.pdf",
+          "similarity": 0.5715925097465515
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "ATM-01",
+      "kind": "answerable",
+      "question": "ATmega328P单片机的片上自编程Flash程序存储器容量是多少K bytes？",
+      "source": "ATmega328P.pdf",
+      "reference_page": 1,
+      "reference_answer": "32K bytes。",
+      "anchors": [
+        [
+          "32K",
+          "bytes",
+          "flash"
+        ]
+      ],
+      "retrieval_ms": 65.63,
+      "hits": [
+        {
+          "text": "[第245页]\n245\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n27.5\nPage Size\n27.6\nParallel Programming Parameters, Pin Mapping, and Commands\nThis section describes how to parallel program and verify flash program memory, EEPROM data memory, memory lock bits, \nand fuse bits in the ATmega328P. Pulses are assumed",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.691719651222229
+        },
+        {
+          "text": "[第18页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n18\n7.3\nSRAM Data Memory\nFigure 7-2 shows how the ATmega328P SRAM memory is organized.\nThe ATmega328P is a complex microcontroller with more peripheral units than can be supported within the 64 locations \nreserved in the opcode for the IN and OUT instruct",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6856367588043213
+        },
+        {
+          "text": "re 16 or 32 bits wide, the flash is organized as 16K 16. For software security, the flash program memory space \nis divided into two sections, boot loader section and application program section in ATmega328P. See SELFPRGEN \ndescription in Section 25.3.1 “SPMCSR – Store Program Memory Control and St",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6816500425338745
+        },
+        {
+          "text": "[第254页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n254\n27.8\nSerial Downloading\nBoth the flash and EEPROM memory arrays can be programmed using the serial SPI bus while RESET is pulled to GND. \nThe serial interface consists of pins SCK, MOSI (input) and MISO (output). After RESET is set low, the programm",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6732262969017029
+        },
+        {
+          "text": "[第223页]\n223\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n25.\nSelf-Programming the Flash, ATmega328P\n25.1\nOverview\nIn Atmel® ATmega328P, there is no read-while-write support, and no separate boot loader section. The SPM instruction can \nbe executed from the entire flash.\nThe device provides a self-programm",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6721029281616211
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "ATM-02",
+      "kind": "answerable",
+      "question": "ATmega328P内置了多少Kbytes的内部SRAM？",
+      "source": "ATmega328P.pdf",
+      "reference_page": 1,
+      "reference_answer": "2Kbytes internal SRAM。",
+      "anchors": [
+        [
+          "2Kbytes",
+          "internal",
+          "SRAM"
+        ],
+        [
+          "2K",
+          "SRAM"
+        ]
+      ],
+      "retrieval_ms": 35.89,
+      "hits": [
+        {
+          "text": "[第18页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n18\n7.3\nSRAM Data Memory\nFigure 7-2 shows how the ATmega328P SRAM memory is organized.\nThe ATmega328P is a complex microcontroller with more peripheral units than can be supported within the 64 locations \nreserved in the opcode for the IN and OUT instruct",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6286102533340454
+        },
+        {
+          "text": "[第55页]\n55\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n12.2.2\nEIMSK – External Interrupt Mask Register\n•\nBit 7..2 – Res: Reserved Bits\nThese bits are unused bits in the Atmel® ATmega328P, and will always read as zero.\n•\nBit 1 – INT1: External Interrupt Request 1 Enable\nWhen the INT1 bit is set (one) and t",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5986708998680115
+        },
+        {
+          "text": "[第66页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n66\n•\nSCK/PCINT5 – Port B, Bit 5\nSCK: Master clock output, slave clock input pin for SPI channel. When the SPI is enabled as a slave, this pin is configured as \nan input regardless of the setting of DDB5. When the SPI is enabled as a master, the data dire",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5861902236938477
+        },
+        {
+          "text": "[第54页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n54\n12.2\nRegister Description\n12.2.1\nEICRA – External Interrupt Control Register A\nThe external interrupt control register A contains control bits for interrupt sense control.\n•\nBit 7..4 – Res: Reserved Bits\nThese bits are unused bits in the Atmel® ATmega",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5850062966346741
+        },
+        {
+          "text": "[第6页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n6\n2.\nOverview\nThe Atmel® ATmega328P is a low-power CMOS 8-bit microcontroller based on the AVR® enhanced RISC architecture. By \nexecuting powerful instructions in a single clock cycle, the ATmega328P achieves throughputs approaching 1MIPS per MHz \nallowin",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5839228630065918
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "ATM-03",
+      "kind": "answerable",
+      "question": "ATmega328P内置了多少Kbytes的EEPROM数据存储区？",
+      "source": "ATmega328P.pdf",
+      "reference_page": 1,
+      "reference_answer": "1Kbytes EEPROM。",
+      "anchors": [
+        [
+          "1Kbytes",
+          "EEPROM"
+        ],
+        [
+          "1K",
+          "EEPROM"
+        ]
+      ],
+      "retrieval_ms": 36.53,
+      "hits": [
+        {
+          "text": "[第19页]\n19\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n7.4\nEEPROM Data Memory\nThe Atmel® ATmega328P contains 1Kbyte of data EEPROM memory. It is organized as a separate data space, in which \nsingle bytes can be read and written. The EEPROM has an endurance of at least 100,000 write/erase cycles. The acces",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6829065084457397
+        },
+        {
+          "text": "[第18页]\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n18\n7.3\nSRAM Data Memory\nFigure 7-2 shows how the ATmega328P SRAM memory is organized.\nThe ATmega328P is a complex microcontroller with more peripheral units than can be supported within the 64 locations \nreserved in the opcode for the IN and OUT instruct",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6669918298721313
+        },
+        {
+          "text": "[第245页]\n245\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n27.5\nPage Size\n27.6\nParallel Programming Parameters, Pin Mapping, and Commands\nThis section describes how to parallel program and verify flash program memory, EEPROM data memory, memory lock bits, \nand fuse bits in the ATmega328P. Pulses are assumed",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.662477970123291
+        },
+        {
+          "text": "[第55页]\n55\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n12.2.2\nEIMSK – External Interrupt Mask Register\n•\nBit 7..2 – Res: Reserved Bits\nThese bits are unused bits in the Atmel® ATmega328P, and will always read as zero.\n•\nBit 1 – INT1: External Interrupt Request 1 Enable\nWhen the INT1 bit is set (one) and t",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.656423807144165
+        },
+        {
+          "text": "[第21页]\n21\nATmega328P [DATASHEET]\n7810D–AVR–01/15\n•\nBit 3 – EERIE: EEPROM Ready Interrupt Enable\nWriting EERIE to one enables the EEPROM ready interrupt if the I bit in SREG is set. Writing EERIE to zero disables the \ninterrupt. The EEPROM ready interrupt generates a constant interrupt when EEPE is c",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.6558212041854858
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": true
+    },
+    {
+      "id": "NE5-01",
+      "kind": "answerable",
+      "question": "NE555精密定时器的TTL兼容输出灌电流或拉电流最高可达多少mA？",
+      "source": "NE555.pdf",
+      "reference_page": 1,
+      "reference_answer": "最高可灌入或拉出200mA电流。",
+      "anchors": [
+        [
+          "sink",
+          "source",
+          "200mA"
+        ],
+        [
+          "200",
+          "sink"
+        ]
+      ],
+      "retrieval_ms": 42.87,
+      "hits": [
+        {
+          "text": "MPU-6050 can be accessed using either I2C at 400 kHz \nor SPI at 1MHz (MPU-6000 only).  SPI operates in four-wire mode.  \n \nSerial Interface  \nPin Number \nMPU-6000 \nMPU-6050 \nPin Name \nPin Description \n8 \nY \n \n/CS \nSPI chip select (0=SPI enable) \n8 \n \nY \nVLOGIC \nDigital I/O supply voltage.  VLOGIC mu",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5738173723220825
+        },
+        {
+          "text": "载流能力。 \n建议外部增加TVS 管。 \n建议预留测试点。 \nGND \n18、30、35、38、43~45、47、73、77~92",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5729210376739502
+        },
+        {
+          "text": "二、匝数计算\n以 220V 整流后约 310V 直流母线、输出 12V/5A、工作频率 65kHz、最大占空比 Dmax 取 0.45 为例。磁通密度摆幅 B 取 0.18T 留裕量，由公式 Np = Vdc × Dmax / (ΔB × f × Ae) 估算，初级匝数约 66 匝。次级按匝比折算，12V 输出考虑整流管压降 0.7V，取 3 匝。辅助绕组给 VCC 供电，取 9 匝。计算结果必须回到实际磁芯 AL 值复核电感量，不能只信公式。",
+          "source": "EE28变压器绕制笔记.txt",
+          "similarity": 0.5684263110160828
+        },
+        {
+          "text": "最大输出功率37 mW @ THD = \n1 %，R = 32 Ω。 \n若输出功率无法满足需求，可用此接\n口驱动外部功放器件。 \n不用则悬空。 \nSPK_P \n22 \nAO \n模拟音频差分输出通道（+） \nMIC_N \n23 \nAI \n麦克风输入通道（-） \n不用则悬空。 \nMIC_P \n24 \nAI \n麦克风输入通道（+）",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.554695725440979
+        },
+        {
+          "text": "RTI(2)\n±1.25\n±7.5\nmV\nBus offset voltage, RTI(2) vs temperature\n–40°C ≤ TA ≤ 125°C\n10\n40\nμV/°C\nPSRR\nBus offset voltage, RTI(2) vs power supply\n±0.5\nmV/V\nIB\nInput bias current (IIN+, IIN– pins)\n0.1\nnA\nVBUS input impedance\n830\nkΩ\nInput leakage (3)\n(IN+ pin) + (IN– pin),\nPower-down mode\n0.1\n0.5\nμA\nDC AC",
+          "source": "INA226.pdf",
+          "similarity": 0.5530640482902527
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "NE5-02",
+      "kind": "answerable",
+      "question": "NE555的定时范围从微秒可以达到多长时间？",
+      "source": "NE555.pdf",
+      "reference_page": 1,
+      "reference_answer": "微秒级到数小时（microseconds to hours）。",
+      "anchors": [
+        [
+          "microseconds",
+          "hours"
+        ]
+      ],
+      "retrieval_ms": 29.95,
+      "hits": [
+        {
+          "text": "5\n0.1\n0.5\n%/V\nSE555\n0.05\n0.2\nEach timer, astable(3)\nNA555, NE555, \nSA555\n0.3\nSE555\n0.15\ntr\nOutput-pulse rise time\nCL = 15pF, TA = 25°C,\n20% to 80%\nNA555, NE555, \nSA555\n100\n300\nns\nSE555\n100\n200\ntf\nOutput-pulse fall time\nCL = 15pF, TA = 25°C,\n80% to 20%\nNA555, NE555, \nSA555\n100\n300\nns\nSE555\n100\n200\n(1",
+          "source": "NE555.pdf",
+          "similarity": 0.5175954103469849
+        },
+        {
+          "text": "timers plus one \nPWM timer, as well as standard and advanced communication interfaces: up to two I2Cs \nand SPIs, three USARTs, an USB and a CAN.\nThe devices operate from a 2.0 to 3.6 V power supply. They are available in both the –40 to \n+85°C temperature range and the –40 to +105 °C extended tempe",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5131405591964722
+        },
+        {
+          "text": "[第10页]\n6 Detailed Description\n6.1 Overview\nThe Nx555 or Sx555 is a precision timing device for general-purpose timing applications from 10µs to hours or \nfrom < 1mHz to 100kHz. In the time-delay or monostable mode of operation, the timed interval is controlled by \na single external resistor and capa",
+          "source": "NE555.pdf",
+          "similarity": 0.5084397196769714
+        },
+        {
+          "text": "IM\nTimer resolution\n-\n-\n16\nbit\ntCOUNTER\n16-bit counter clock period \nwhen internal clock is \nselected\n-\n1\n65536\ntTIMxCLK\n fTIMxCLK = 72 MHz\n0.0139\n910\nµs\ntMAX_COUNT\nMaximum possible count\n-\n-\n65536 × 65536\ntTIMxCLK\n fTIMxCLK = 72 MHz\n-\n59.6\ns",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.5082683563232422
+        },
+        {
+          "text": "55, NE555, SA555\n12.75\n13.3\nV\nSE555\n13\n13.3\nVCC = 15V, IOH = –100mA,\nTA = –55°C to +125°C\nSE555\n12\nVCC = 15V, IOH = –200mA\n12.5\nVCC = 5V, IOH = –100mA\nNA555, NE555, SA555\n2.75\n3.3\nSE555\n3\n3.3\nVCC = 5V, IOH = –100mA,\nTA = –55°C to +125°C\nSE555\n2\nSupply current\nOutput low, no load, VCC = 15V\nNA555, NE",
+          "source": "NE555.pdf",
+          "similarity": 0.5024885535240173
+        }
+      ],
+      "source_hit_at_1": true,
+      "source_hit_at_5": true,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "NE5-03",
+      "kind": "answerable",
+      "question": "NE555支持哪两种典型工作模式？",
+      "source": "NE555.pdf",
+      "reference_page": 1,
+      "reference_answer": "无稳态模式或单稳态模式（Astable or monostable operation）。",
+      "anchors": [
+        [
+          "Astable",
+          "monostable"
+        ]
+      ],
+      "retrieval_ms": 22.82,
+      "hits": [
+        {
+          "text": "FUN=0 可以将模块设置成最少功能模式。 \n⚫ \n射频和USIM 卡均不工作。 \n飞行模式 \n⚫ \nAT+CFUN=4 或拉低W_DISABLE#引脚可以将模块设置成飞行模式。 \n⚫ \n射频不工作。 \n休眠模式 \n模块的功耗将会降至最低，但模块仍可接收寻呼、短消息、电话和TCP/UDP 数据。 \n关机模式 \nPMIC 停止给基带和射频部分的电源供电，软件停止工作，但VBAT_RF 和VBAT_BB 仍\n然通电。 \n有关AT+CFUN 详情，请参考文档 [2]。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.4943808317184448
+        },
+        {
+          "text": "[第25页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          24 / 85 \n3 工作特性 \n \n3.1. 工作模式 \n \n表7：工作模式 \n备注 \n \n \n \n \n \n \n \n \n \n \n \n \n模式 \n功能 \n全功能模式 \n空闲 \n软件运行正常。模块注册上网络，但与网络无数据交互。 \n语音/数据 \n网络连接正常。模块功耗取决于网络设置和数据传输速率。 \n最少功能模式 \n⚫ \n不断电情况下，AT+CFUN=0 可以将模块设置成最少功能模式。 \n⚫ \n射频和U",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.4865323305130005
+        },
+        {
+          "text": "[第64页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          63 / 85 \n \n表41：EC600M-EU 功耗 \nLTE-TDD B34 \n176 \nmA \nLTE-TDD B38 \n170 \nmA \nLTE-TDD B39 \n197 \nmA \nLTE-TDD B40 \n208 \nmA \nLTE-TDD B41 \n205 \nmA \n描述 \n条件 \n典型值 \n单位 \n关机模式 \n模块关机 \n20.20 \nμA \n休眠模式 \n最少功能模式（USB 断开） \n0",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.4792083501815796
+        },
+        {
+          "text": "[第32页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          31 / 85 \n也可以直接通过按钮开关来控制PWRKEY，为防止接触产生的静电冲击，因此按钮附近需放置一颗\nTVS 管用于ESD 防护。 \nPWRKEY\nS1\nClose to S1\nTVS\nTurn-on pulse\n \n图11：按钮开机参考电路设计 \n \nVIL   0.5 V\nVBAT\nPWRKEY\nRESET_N\nSTATUS\nInactive\nActive\nUART\nActive\nUSB",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.4745060205459595
+        },
+        {
+          "text": "接口 \n \n模块提供2 路USIM 接口，符合ETSI 和IMT-2000 规范，支持1.8 V 和3.0 V USIM 卡，且支持双卡\n单待功能。USIM2 接口可选，详情请咨询移远通信技术支持。 \n \n表13：USIM 接口引脚描述 \n1. 在拉低PWRKEY 之前，需保证VBAT 电压稳定。建议VBAT 上电稳定至少30 ms 后再拉低PWRKEY。 \n2. 使用MCU 控制模块进入强制下载模式时需按照如上时序图进行控制，如需手动进入强制下载模式，\n请按照图18 所示短接测试点即可。 \n3. 必须使用版本6.0 及以上的QFlash 工具进行固件升级。 \n引脚名 \n引脚号 \nI/O \n描",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.47375810146331787
+        }
+      ],
+      "source_hit_at_1": false,
+      "source_hit_at_5": false,
+      "anchor_coverage_at_5": false
+    },
+    {
+      "id": "OOS-01",
+      "kind": "out_of_corpus",
+      "question": "AS5600的I2C地址是多少？",
+      "reference_answer": "所选知识库未收录AS5600手册；应说明资料不足。",
+      "retrieval_ms": 29.95,
+      "hits": [
+        {
+          "text": "I2C Master \nI2C Slave 4 \nI2C Master \n \nFor information regarding the interrupt enable/disable registers and flag registers, please refer to the MPU-\n6000/MPU-6050 Register Map and Register Descriptions document. Some interrupt sources are explained \nbelow.",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5758126974105835
+        },
+        {
+          "text": "，详情请参考文档 [3]。 \n引脚名 \n引脚号 \nI/O \n描述 \n备注 \nI2C_SDA \n56 \nOD \nI2C 串行数据 \n需外部1.8 V 上拉。 \n不用则悬空。 \nI2C_SCL \n57 \nOD \nI2C 串行时钟",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.542896032333374
+        },
+        {
+          "text": "口（可选） \n⚫ \n支持1 路I2C 接口 \n⚫ \n符合I2C 总线协议规范 \nUSB 接口 \n⚫ \nUSB 2.0（只支持从模式），数据传输速率最大到480 Mbps \n⚫ \n用于AT 命令通信、数据传输、软件调试、固件升级 \n⚫ \nUSB 转串口驱动：支持Windows 8.1/10/11，Linux 2.6~6.7，Android 4.x~13.x\n等操作系统下的USB 驱动 \n强制下载接口 \n支持1 路强制下载接口 \nUART \n主UART： \n⚫ \nAT 命令通信和数据传输 \n⚫ \n波特率默认为115200 bps \n⚫ \n支持RTS 和CTS 硬件流控 \n调试UART： \n⚫ \n用",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5359690189361572
+        },
+        {
+          "text": "be connected to the same I2C bus.  \nWhen used in this configuration, the address of the one of the devices should be b1101000 (pin AD0 is logic \nlow) and the address of the other should be b1101001 (pin AD0 is logic high).  \n \n9.3 \nI2C Communications Protocol \nSTART (S) and STOP (P) Conditions \nComm",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5357562303543091
+        },
+        {
+          "text": "6000:  The logic level of the auxiliary I2C bus is VDD \n \nMPU-6050:  The logic level of the auxiliary I2C bus can be programmed to be either VDD or VLOGIC  \n \n \nFor further information regarding the MPU-6050’s logic levels, please refer to Section 10.2.",
+          "source": "MPU6050.pdf",
+          "similarity": 0.532028079032898
+        }
+      ],
+      "observation": "仅记录召回；未调用大模型，未评估拒答是否成功。"
+    },
+    {
+      "id": "OOS-02",
+      "kind": "out_of_corpus",
+      "question": "MAX30102的LED电流配置寄存器地址是多少？",
+      "reference_answer": "所选知识库未收录MAX30102手册；应说明资料不足。",
+      "retrieval_ms": 41.07,
+      "hits": [
+        {
+          "text": "-94.8 \nLTE-FDD B66 (10 MHz) \n-99.0 \n-96.5 \n若天线端口外围设计存在直流电，则必须在C3 位置贴隔直电容，防止发生对地短路，电容值建议为  \n100 pF，可根据实际要求调整。若外围设计中无直流电，则无需预留C3 位置。",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5909901857376099
+        },
+        {
+          "text": "Frequency, Sensor \nand Interrupt Registers Read Only \nMPU-6000 only \n \n20 ±10% \n \nMHz \n \nI2C Operating Frequency \nAll registers, Fast-mode \n \n \n400 \nkHz \n \n \nAll registers, Standard-mode \n \n \n100 \nkHz \n \nI2C ADDRESS \nAD0 = 0 \n \n1101000 \n \n \n \n \nAD0 = 1 \n \n1101001 \n \n \n \nDIGITAL INPUTS  (SDI/SDA, AD",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5908270478248596
+        },
+        {
+          "text": "[第15页]\nEC600M 系列硬件设计手册 \n \n上海移远通信技术股份有限公司                                                          14 / 85 \n2.2. 关键特性 \n \n表4：模块关键特性 \n参数 \n说明 \n供电电压 \n⚫ \n3.4~4.3 V \n⚫ \n典型值：3.8 V \n短消息（SMS） \n⚫ \n文本和PDU 模式 \n⚫ \n点对点短消息收发 \n⚫ \n短消息小区广播 \n⚫ \n短消息存储：存储在USIM 卡和ME 中，默认存储在ME 中 \nUSIM 卡接口 \n⚫ \n支持2 路USIM 卡接口：1.8 V 和3.0 V \n⚫",
+          "source": "EC600M-CN.pdf",
+          "similarity": 0.5714208483695984
+        },
+        {
+          "text": "MPU-6050 can be accessed using either I2C at 400 kHz \nor SPI at 1MHz (MPU-6000 only).  SPI operates in four-wire mode.  \n \nSerial Interface  \nPin Number \nMPU-6000 \nMPU-6050 \nPin Name \nPin Description \n8 \nY \n \n/CS \nSPI chip select (0=SPI enable) \n8 \n \nY \nVLOGIC \nDigital I/O supply voltage.  VLOGIC mu",
+          "source": "MPU6050.pdf",
+          "similarity": 0.5709072947502136
+        },
+        {
+          "text": "T instructions, 0x20 must be added to these addresses. The ATmega328P \nis a complex microcontroller with more peripheral units than can be supported within the 64 location reserved in opcode \nfor the IN and OUT instructions. For the extended I/O space from 0x60 - 0xFF in SRAM, only the ST/STS/STD an",
+          "source": "ATmega328P.pdf",
+          "similarity": 0.5594182014465332
+        }
+      ],
+      "observation": "仅记录召回；未调用大模型，未评估拒答是否成功。"
+    },
+    {
+      "id": "OOS-03",
+      "kind": "out_of_corpus",
+      "question": "今天深圳的实时天气和气温是多少？",
+      "reference_answer": "静态芯片知识库不含实时天气；应说明资料不足。",
+      "retrieval_ms": 26.78,
+      "hits": [
+        {
+          "text": "[第9页]\n5.7 Typical Characteristics (continued)\nData for temperatures less than –40°C and greater than 105°C are applicable for SE555 circuits only.\nTA - Free-Air Temperature (°C)\nPulse Duration Relative to Value at TA = 25°C\n-75\n-50\n-25\n0\n25\n50\n75\n100\n125\n0.984\n0.987\n0.99\n0.993\n0.996\n0.999\n1.002\n1.00",
+          "source": "NE555.pdf",
+          "similarity": 0.49029290676116943
+        },
+        {
+          "text": "TL inputs.\nDevice Information\nPART NUMBER\nOPERATING \nTEMPERATURE\nPACKAGE(1)\nNA555\nTA = –40°C to +105°C\nD (SOIC, 8)\nP (PDIP, 8)\nNE555\nTA = 0°C to 70°C\nD (SOIC, 8)\nP (PDIP, 8)\nPS (SO, 8)\nPW (TSSOP, 8)\nSA555\nTA = –40°C to +85°C\nD (SOIC, 8)\nP (PDIP, 8)\nSE555\nTA = –55°C to +125°C\nD (SOIC, 8)\nFK (LCCC, 20",
+          "source": "NE555.pdf",
+          "similarity": 0.4658510684967041
+        },
+        {
+          "text": "on).\n          \n          \nTable 48. RAIN max for fADC = 14 MHz(1) \n1.\nEvaluated by characterization, not tested in production, unless otherwise specified.\nTs (cycles)\ntS (µs)\nRAIN max (kΩ)\n1.5\n0.11\n0.4\n7.5\n0.54\n5.9\n13.5\n0.96\n11.4\n28.5\n2.04\n25.2\n41.5\n2.96\n37.2\n55.5\n3.96\n50\n71.5\n5.11\nNA\n239.5\n17.1\nNA",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.46221286058425903
+        },
+        {
+          "text": "and temperature  \n2.8 µA @ 1 Hz pressure and temperature  \n3.6 µA @ 1 Hz humidity, pressure and temperature  \n0.1 µA in sleep mode \n• Operating range \n-40…+85 °C, 0…100 % rel. humidity, 300…1100 hPa \n• Humidity sensor and pressure sensor can be independently enabled / disabled \n• Register and perfo",
+          "source": "BME280.pdf",
+          "similarity": 0.4552900791168213
+        },
+        {
+          "text": "hen multiply by \n–1 for the negative sign.\nExample: 1110 0111 0000 has twos compliment of 0001 1001 0000 = 0001 1000 1111 + 1\nConvert to temperature: 0001 1001 0000 = 190h = 400; 400 × (0.0625°C / LSB) = 25°C = (|–25°C|); (|–\n25°C|) × (–1) = –25°C\nTable 6-3. 13-Bit Temperature Data Format\nTEMPERATUR",
+          "source": "TMP102.pdf",
+          "similarity": 0.44811052083969116
+        }
+      ],
+      "observation": "仅记录召回；未调用大模型，未评估拒答是否成功。"
+    },
+    {
+      "id": "OOS-04",
+      "kind": "out_of_corpus",
+      "question": "我明天的面试会不会被录用？",
+      "reference_answer": "知识库无法判断个人未来录用结果；应说明资料不足。",
+      "retrieval_ms": 40.57,
+      "hits": [
+        {
+          "text": "may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers\nand other limited information may not be available for release.\n \nIn no event shall TI's liability arising out",
+          "source": "ADS1115.pdf",
+          "similarity": 0.4742327332496643
+        },
+        {
+          "text": "y not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers\nand other limited information may not be available for release.\n \nIn no event shall TI's liability arising out o",
+          "source": "INA226.pdf",
+          "similarity": 0.46880459785461426
+        },
+        {
+          "text": "information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers\nand other limited information may not be available for release.\n \nIn no event shall TI's liab",
+          "source": "NE555.pdf",
+          "similarity": 0.4588775038719177
+        },
+        {
+          "text": "aphic algorithms or open technologies or for any methods which \nhave been or may be developed to bypass, decrypt or crack such algorithms or \ntechnologies. \n•\nWhile robust security testing may be done, no level of certification can absolutely \nguarantee protections against all attacks, including, fo",
+          "source": "stm32f103c8.pdf",
+          "similarity": 0.4568824768066406
+        },
+        {
+          "text": ") is not checked anymore. Instead, error code \n20 is returned and no others tests are performed.",
+          "source": "BME280.pdf",
+          "similarity": 0.4552164077758789
+        }
+      ],
+      "observation": "仅记录召回；未调用大模型，未评估拒答是否成功。"
+    }
+  ],
+  "limitations": [
+    "人工编写的小规模固定测试，多数问题显式包含型号，属于基础检索验证。",
+    "未进行随机抽样、独立留出集或跨文档替代兼容性评估。",
+    "没有调用大模型，不报告答案准确率、幻觉率或拒答成功率。",
+    "库外问题仍会返回相似文本；当前检索器没有显式拒绝机制。",
+    "耗时来自单次本机CPU运行，包含问题向量化与检索，不包含模型加载和答案生成。",
+    "参考页码是PDF物理页码，从1开始；部分资料的印刷页码与其不同。"
+  ]
+}

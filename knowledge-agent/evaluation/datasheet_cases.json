@@ -1,0 +1,719 @@
+{
+  "description": "固定的小规模参数检索基线，不包含模型生成答案评估。参考页码为PDF物理页码，从1开始；题目和答案不进入知识库。",
+  "cases": [
+    {
+      "id": "STM-01",
+      "kind": "answerable",
+      "question": "STM32F103C8的Cortex-M3内核最高主频是多少MHz？",
+      "source": "stm32f103c8.pdf",
+      "reference_page": 1,
+      "reference_answer": "最高72 MHz。",
+      "anchors": [
+        [
+          "72",
+          "MHz"
+        ]
+      ]
+    },
+    {
+      "id": "STM-02",
+      "kind": "answerable",
+      "question": "STM32F103C8有多少Kbytes的SRAM？",
+      "source": "stm32f103c8.pdf",
+      "reference_page": 1,
+      "reference_answer": "20 Kbytes SRAM。",
+      "anchors": [
+        [
+          "20",
+          "Kbytes",
+          "SRAM"
+        ]
+      ]
+    },
+    {
+      "id": "STM-03",
+      "kind": "answerable",
+      "question": "STM32F103C8的应用供电和I/O电压范围是多少？",
+      "source": "stm32f103c8.pdf",
+      "reference_page": 1,
+      "reference_answer": "2.0至3.6 V。",
+      "anchors": [
+        [
+          "2.0",
+          "3.6",
+          "supply"
+        ]
+      ]
+    },
+    {
+      "id": "ECM-01",
+      "kind": "answerable",
+      "question": "EC600M模块供电范围是多少，VBAT最低不能低于多少伏？",
+      "source": "EC600M-CN.pdf",
+      "reference_page": 30,
+      "reference_answer": "本手册要求3.4至4.3 V，输入电压不低于3.4 V。",
+      "anchors": [
+        [
+          "3.4",
+          "4.3",
+          "供电范围"
+        ]
+      ]
+    },
+    {
+      "id": "ECM-02",
+      "kind": "answerable",
+      "question": "EC600M供电参考设计要求电源至少提供多少A电流？",
+      "source": "EC600M-CN.pdf",
+      "reference_page": 30,
+      "reference_answer": "供电给模块的电流至少需要1.5 A。",
+      "anchors": [
+        [
+          "至少",
+          "1.5",
+          "电流"
+        ]
+      ]
+    },
+    {
+      "id": "ECM-03",
+      "kind": "answerable",
+      "question": "EC600M的ADC输入范围和分辨率分别是多少？",
+      "source": "EC600M-CN.pdf",
+      "reference_page": 48,
+      "reference_answer": "ADC0/ADC1输入电压0至1.2 V，分辨率12位。",
+      "anchors": [
+        [
+          "1.2",
+          "12",
+          "分辨率"
+        ]
+      ]
+    },
+    {
+      "id": "TL4-01",
+      "kind": "answerable",
+      "question": "TL431的参考电压Vref大约是多少伏？",
+      "source": "TL431.pdf",
+      "reference_page": 1,
+      "reference_answer": "约2.5 V。",
+      "anchors": [
+        [
+          "Vref",
+          "approximately",
+          "2.5"
+        ]
+      ]
+    },
+    {
+      "id": "TL4-02",
+      "kind": "answerable",
+      "question": "TL431可调输出电压的上限是多少伏？",
+      "source": "TL431.pdf",
+      "reference_page": 1,
+      "reference_answer": "上限36 V，范围从Vref到36 V。",
+      "anchors": [
+        [
+          "Adjustable",
+          "output",
+          "36"
+        ]
+      ]
+    },
+    {
+      "id": "TL4-03",
+      "kind": "answerable",
+      "question": "TL431的B级、A级和标准级在25°C时初始参考电压容差各是多少？",
+      "source": "TL431.pdf",
+      "reference_page": 1,
+      "reference_answer": "B级0.5%，A级1%，标准级2%。",
+      "anchors": [
+        [
+          "0.5%",
+          "1%",
+          "2%"
+        ]
+      ]
+    },
+    {
+      "id": "LM2-01",
+      "kind": "answerable",
+      "question": "LM2596的固定内部开关频率是多少kHz？",
+      "source": "LM2596.pdf",
+      "reference_page": 1,
+      "reference_answer": "150 kHz。",
+      "anchors": [
+        [
+          "150",
+          "kHz",
+          "frequency"
+        ]
+      ]
+    },
+    {
+      "id": "LM2-02",
+      "kind": "answerable",
+      "question": "LM2596标称能够驱动多大的输出负载电流？",
+      "source": "LM2596.pdf",
+      "reference_page": 1,
+      "reference_answer": "3 A。",
+      "anchors": [
+        [
+          "3-A",
+          "load"
+        ]
+      ]
+    },
+    {
+      "id": "LM2-03",
+      "kind": "answerable",
+      "question": "LM2596有哪些固定输出电压版本，是否还有可调版本？",
+      "source": "LM2596.pdf",
+      "reference_page": 1,
+      "reference_answer": "固定3.3 V、5 V、12 V，以及可调版本。",
+      "anchors": [
+        [
+          "3.3",
+          "5",
+          "12",
+          "adjustable"
+        ]
+      ]
+    },
+    {
+      "id": "MP1-01",
+      "kind": "answerable",
+      "question": "MP1584的工作输入电压范围是多少伏？",
+      "source": "MP1584.pdf",
+      "reference_page": 1,
+      "reference_answer": "4.5至28 V。",
+      "anchors": [
+        [
+          "4.5V",
+          "28V",
+          "input"
+        ]
+      ]
+    },
+    {
+      "id": "MP1-02",
+      "kind": "answerable",
+      "question": "MP1584可编程开关频率的范围是多少？",
+      "source": "MP1584.pdf",
+      "reference_page": 1,
+      "reference_answer": "100 kHz至1.5 MHz。",
+      "anchors": [
+        [
+          "100kHz",
+          "1.5MHz",
+          "Frequency"
+        ]
+      ]
+    },
+    {
+      "id": "MP1-03",
+      "kind": "answerable",
+      "question": "MP1584的额定输出电流是多少A？",
+      "source": "MP1584.pdf",
+      "reference_page": 1,
+      "reference_answer": "3 A。",
+      "anchors": [
+        [
+          "3A",
+          "output"
+        ]
+      ]
+    },
+    {
+      "id": "ADS-01",
+      "kind": "answerable",
+      "question": "ADS1115是几位的模数转换器？",
+      "source": "ADS1115.pdf",
+      "reference_page": 1,
+      "reference_answer": "16位ADC。",
+      "anchors": [
+        [
+          "16-bit",
+          "converter"
+        ]
+      ]
+    },
+    {
+      "id": "ADS-02",
+      "kind": "answerable",
+      "question": "ADS1115的供电电压范围是多少？",
+      "source": "ADS1115.pdf",
+      "reference_page": 1,
+      "reference_answer": "2.0至5.5 V。",
+      "anchors": [
+        [
+          "2.0V",
+          "5.5V",
+          "supply"
+        ]
+      ]
+    },
+    {
+      "id": "ADS-03",
+      "kind": "answerable",
+      "question": "ADS1115支持多少路单端输入或差分输入？",
+      "source": "ADS1115.pdf",
+      "reference_page": 1,
+      "reference_answer": "4路单端或2路差分。",
+      "anchors": [
+        [
+          "four",
+          "single-ended",
+          "two",
+          "differential"
+        ]
+      ]
+    },
+    {
+      "id": "INA-01",
+      "kind": "answerable",
+      "question": "INA219能够检测的总线电压范围是多少？",
+      "source": "INA219.pdf",
+      "reference_page": 1,
+      "reference_answer": "0至26 V。",
+      "anchors": [
+        [
+          "0",
+          "26",
+          "bus"
+        ]
+      ]
+    },
+    {
+      "id": "INA-02",
+      "kind": "answerable",
+      "question": "INA219自身需要的单电源供电范围是多少伏？",
+      "source": "INA219.pdf",
+      "reference_page": 1,
+      "reference_answer": "3至5.5 V。",
+      "anchors": [
+        [
+          "3-",
+          "5.5-V",
+          "supply"
+        ]
+      ]
+    },
+    {
+      "id": "INA-03",
+      "kind": "answerable",
+      "question": "INA219的I2C接口有多少个可编程地址？",
+      "source": "INA219.pdf",
+      "reference_page": 1,
+      "reference_answer": "16个可编程地址。",
+      "anchors": [
+        [
+          "16",
+          "programmable",
+          "addresses"
+        ]
+      ]
+    },
+    {
+      "id": "BME-01",
+      "kind": "answerable",
+      "question": "BME280的VDD主电源电压范围是多少？",
+      "source": "BME280.pdf",
+      "reference_page": 2,
+      "reference_answer": "1.71至3.6 V；应区别于VDDIO的1.2至3.6 V。",
+      "anchors": [
+        [
+          "1.71",
+          "3.6",
+          "supply"
+        ]
+      ]
+    },
+    {
+      "id": "BME-02",
+      "kind": "answerable",
+      "question": "BME280在25°C、20至80%RH条件下的绝对湿度测量精度容差是多少？",
+      "source": "BME280.pdf",
+      "reference_page": 9,
+      "reference_answer": "绝对精度容差±3%RH，条件为25°C、20至80%RH，含迟滞。",
+      "anchors": [
+        [
+          "±3",
+          "accuracy"
+        ],
+        [
+          "±3",
+          "Absolute"
+        ]
+      ]
+    },
+    {
+      "id": "BME-03",
+      "kind": "answerable",
+      "question": "BME280为什么推荐使用burst read连续读取数据，而不是逐个寄存器单独读取？",
+      "source": "BME280.pdf",
+      "reference_page": 23,
+      "reference_answer": "避免混用不同测量周期的数据字节，并减少接口通信流量。",
+      "anchors": [
+        [
+          "burst read",
+          "mix-up"
+        ],
+        [
+          "burst reads",
+          "inconsistent"
+        ]
+      ]
+    },
+    {
+      "id": "LIS-01",
+      "kind": "answerable",
+      "question": "LIS3DH的供电电压（supply voltage）工作范围是多少伏？",
+      "source": "LIS3DH.pdf",
+      "reference_page": 1,
+      "reference_answer": "1.71 V至3.6 V。",
+      "anchors": [
+        [
+          "1.71",
+          "3.6",
+          "voltage"
+        ]
+      ]
+    },
+    {
+      "id": "LIS-02",
+      "kind": "answerable",
+      "question": "LIS3DH可动态选择的满量程加速度范围（full scale）有哪些档位？",
+      "source": "LIS3DH.pdf",
+      "reference_page": 1,
+      "reference_answer": "±2g/±4g/±8g/±16g动态可选满量程。",
+      "anchors": [
+        [
+          "dynamically",
+          "selectable",
+          "full",
+          "scale"
+        ]
+      ]
+    },
+    {
+      "id": "LIS-03",
+      "kind": "answerable",
+      "question": "LIS3DH的数据输出位数（data output）是多少位？",
+      "source": "LIS3DH.pdf",
+      "reference_page": 1,
+      "reference_answer": "16位数据输出。",
+      "anchors": [
+        [
+          "16-bit",
+          "output"
+        ]
+      ]
+    },
+    {
+      "id": "MPU-01",
+      "kind": "answerable",
+      "question": "MPU-6050的角速度陀螺仪（gyroscope）用户可编程满量程范围有哪些档位？",
+      "source": "MPU6050.pdf",
+      "reference_page": 10,
+      "reference_answer": "±250, ±500, ±1000, and ±2000°/sec。",
+      "anchors": [
+        [
+          "250",
+          "500",
+          "1000",
+          "2000"
+        ]
+      ]
+    },
+    {
+      "id": "MPU-02",
+      "kind": "answerable",
+      "question": "MPU-6050内置的模数转换器ADC采样分辨率是多少位？",
+      "source": "MPU6050.pdf",
+      "reference_page": 10,
+      "reference_answer": "集成16-bit ADC支持同步采样。",
+      "anchors": [
+        [
+          "16-bit",
+          "ADCs"
+        ]
+      ]
+    },
+    {
+      "id": "MPU-03",
+      "kind": "answerable",
+      "question": "MPU-6050的三轴加速度计在AFS_SEL满量程配置下支持哪些量程档位？",
+      "source": "MPU6050.pdf",
+      "reference_page": 13,
+      "reference_answer": "±2g, ±4g, ±8g, ±16g。",
+      "anchors": [
+        [
+          "AFS_SEL",
+          "Full-Scale",
+          "Range"
+        ]
+      ]
+    },
+    {
+      "id": "W25-01",
+      "kind": "answerable",
+      "question": "W25Q64JV串行Flash存储器的存储容量是多少M-bit？",
+      "source": "W25Q64.pdf",
+      "reference_page": 5,
+      "reference_answer": "64M-bit。",
+      "anchors": [
+        [
+          "64M-bit",
+          "Serial",
+          "Flash"
+        ]
+      ]
+    },
+    {
+      "id": "W25-02",
+      "kind": "answerable",
+      "question": "W25Q64JV的工作供电电源电压范围是多少伏？",
+      "source": "W25Q64.pdf",
+      "reference_page": 5,
+      "reference_answer": "2.7V至3.6V电源供电。",
+      "anchors": [
+        [
+          "2.7V",
+          "3.6V",
+          "supply"
+        ]
+      ]
+    },
+    {
+      "id": "W25-03",
+      "kind": "answerable",
+      "question": "W25Q64JV在掉电模式（power-down）下的电流消耗可低至多少微安？",
+      "source": "W25Q64.pdf",
+      "reference_page": 5,
+      "reference_answer": "低至1µA。",
+      "anchors": [
+        [
+          "1µA",
+          "power-down"
+        ],
+        [
+          "1uA",
+          "power-down"
+        ]
+      ]
+    },
+    {
+      "id": "TMP-01",
+      "kind": "answerable",
+      "question": "TMP102数字温度传感器的测量分辨率（resolution）是多少位？",
+      "source": "TMP102.pdf",
+      "reference_page": 1,
+      "reference_answer": "12位（12 bits）。",
+      "anchors": [
+        [
+          "Resolution",
+          "12",
+          "bits"
+        ]
+      ]
+    },
+    {
+      "id": "TMP-02",
+      "kind": "answerable",
+      "question": "TMP102的工作电源供电范围（supply range）是多少伏？",
+      "source": "TMP102.pdf",
+      "reference_page": 1,
+      "reference_answer": "1.4V至3.6V。",
+      "anchors": [
+        [
+          "1.4V",
+          "3.6V",
+          "Supply"
+        ]
+      ]
+    },
+    {
+      "id": "TMP-03",
+      "kind": "answerable",
+      "question": "TMP102在活动状态（active）下的最大静态电流是多少微安？",
+      "source": "TMP102.pdf",
+      "reference_page": 1,
+      "reference_answer": "最大7.5μA。",
+      "anchors": [
+        [
+          "7.5",
+          "active"
+        ]
+      ]
+    },
+    {
+      "id": "IN2-01",
+      "kind": "answerable",
+      "question": "INA226能够检测的总线电压（bus voltage）范围是多少？",
+      "source": "INA226.pdf",
+      "reference_page": 1,
+      "reference_answer": "0V至36V。",
+      "anchors": [
+        [
+          "0V",
+          "36V",
+          "bus"
+        ]
+      ]
+    },
+    {
+      "id": "IN2-02",
+      "kind": "answerable",
+      "question": "INA226自身需要的工作电源供电范围（power supply）是多少伏？",
+      "source": "INA226.pdf",
+      "reference_page": 1,
+      "reference_answer": "2.7V至5.5V。",
+      "anchors": [
+        [
+          "2.7V",
+          "5.5V",
+          "supply"
+        ]
+      ]
+    },
+    {
+      "id": "IN2-03",
+      "kind": "answerable",
+      "question": "INA226的I2C总线上支持多少个可编程地址（programmable addresses）？",
+      "source": "INA226.pdf",
+      "reference_page": 1,
+      "reference_answer": "16个可编程地址。",
+      "anchors": [
+        [
+          "16",
+          "programmable",
+          "addresses"
+        ]
+      ]
+    },
+    {
+      "id": "ATM-01",
+      "kind": "answerable",
+      "question": "ATmega328P单片机的片上自编程Flash程序存储器容量是多少K bytes？",
+      "source": "ATmega328P.pdf",
+      "reference_page": 1,
+      "reference_answer": "32K bytes。",
+      "anchors": [
+        [
+          "32K",
+          "bytes",
+          "flash"
+        ]
+      ]
+    },
+    {
+      "id": "ATM-02",
+      "kind": "answerable",
+      "question": "ATmega328P内置了多少Kbytes的内部SRAM？",
+      "source": "ATmega328P.pdf",
+      "reference_page": 1,
+      "reference_answer": "2Kbytes internal SRAM。",
+      "anchors": [
+        [
+          "2Kbytes",
+          "internal",
+          "SRAM"
+        ],
+        [
+          "2K",
+          "SRAM"
+        ]
+      ]
+    },
+    {
+      "id": "ATM-03",
+      "kind": "answerable",
+      "question": "ATmega328P内置了多少Kbytes的EEPROM数据存储区？",
+      "source": "ATmega328P.pdf",
+      "reference_page": 1,
+      "reference_answer": "1Kbytes EEPROM。",
+      "anchors": [
+        [
+          "1Kbytes",
+          "EEPROM"
+        ],
+        [
+          "1K",
+          "EEPROM"
+        ]
+      ]
+    },
+    {
+      "id": "NE5-01",
+      "kind": "answerable",
+      "question": "NE555精密定时器的TTL兼容输出灌电流或拉电流最高可达多少mA？",
+      "source": "NE555.pdf",
+      "reference_page": 1,
+      "reference_answer": "最高可灌入或拉出200mA电流。",
+      "anchors": [
+        [
+          "sink",
+          "source",
+          "200mA"
+        ],
+        [
+          "200",
+          "sink"
+        ]
+      ]
+    },
+    {
+      "id": "NE5-02",
+      "kind": "answerable",
+      "question": "NE555的定时范围从微秒可以达到多长时间？",
+      "source": "NE555.pdf",
+      "reference_page": 1,
+      "reference_answer": "微秒级到数小时（microseconds to hours）。",
+      "anchors": [
+        [
+          "microseconds",
+          "hours"
+        ]
+      ]
+    },
+    {
+      "id": "NE5-03",
+      "kind": "answerable",
+      "question": "NE555支持哪两种典型工作模式？",
+      "source": "NE555.pdf",
+      "reference_page": 1,
+      "reference_answer": "无稳态模式或单稳态模式（Astable or monostable operation）。",
+      "anchors": [
+        [
+          "Astable",
+          "monostable"
+        ]
+      ]
+    },
+    {
+      "id": "OOS-01",
+      "kind": "out_of_corpus",
+      "question": "AS5600的I2C地址是多少？",
+      "reference_answer": "所选知识库未收录AS5600手册；应说明资料不足。"
+    },
+    {
+      "id": "OOS-02",
+      "kind": "out_of_corpus",
+      "question": "MAX30102的LED电流配置寄存器地址是多少？",
+      "reference_answer": "所选知识库未收录MAX30102手册；应说明资料不足。"
+    },
+    {
+      "id": "OOS-03",
+      "kind": "out_of_corpus",
+      "question": "今天深圳的实时天气和气温是多少？",
+      "reference_answer": "静态芯片知识库不含实时天气；应说明资料不足。"
+    },
+    {
+      "id": "OOS-04",
+      "kind": "out_of_corpus",
+      "question": "我明天的面试会不会被录用？",
+      "reference_answer": "知识库无法判断个人未来录用结果；应说明资料不足。"
+    }
+  ]
+}
